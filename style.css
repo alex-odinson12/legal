@@ -1,0 +1,36 @@
+:root {
+  --ink: #14161a; --ink-2: #4a515c; --ink-3: #767e8b;
+  --bg: #ffffff; --bg-2: #f6f7f9; --line: #e3e6ea; --accent: #1f5fa8;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --ink: #e8eaee; --ink-2: #aab2bd; --ink-3: #7d858f;
+          --bg: #14161a; --bg-2: #1c1f25; --line: #2a2e36; --accent: #7fb0e8; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink);
+  font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-text-size-adjust: 100%; }
+main, header, footer { max-width: 44rem; margin: 0 auto; padding: 0 1.25rem; }
+header { padding-top: 2.5rem; }
+h1 { font-size: 1.7rem; line-height: 1.25; margin: 0 0 .4rem; text-wrap: balance; }
+h2 { font-size: 1.15rem; margin: 2.2rem 0 .6rem; }
+h3 { font-size: 1rem; margin: 1.5rem 0 .4rem; color: var(--ink-2); }
+p, li { color: var(--ink-2); }
+li { margin: .3rem 0; }
+a { color: var(--accent); }
+.meta { color: var(--ink-3); font-size: .875rem; margin: 0 0 2rem;
+  padding-bottom: 1.2rem; border-bottom: 1px solid var(--line); }
+.lede { color: var(--ink); font-size: 1.05rem; }
+.box { background: var(--bg-2); border: 1px solid var(--line); border-radius: 10px;
+  padding: 1rem 1.15rem; margin: 1.4rem 0; }
+.box p:first-child { margin-top: 0; } .box p:last-child { margin-bottom: 0; }
+.tablewrap { overflow-x: auto; margin: 1.2rem 0; }
+table { border-collapse: collapse; width: 100%; font-size: .92rem; }
+th, td { text-align: left; vertical-align: top; padding: .6rem .7rem;
+  border-bottom: 1px solid var(--line); color: var(--ink-2); }
+th { color: var(--ink); font-weight: 600; white-space: nowrap; }
+footer { margin: 3.5rem 0 4rem; padding-top: 1.2rem; border-top: 1px solid var(--line);
+  color: var(--ink-3); font-size: .875rem; }
+.todo { border-left: 3px solid #c0762a; background: #fdf6ec; color: #7a4a10;
+  padding: .8rem 1rem; border-radius: 0 8px 8px 0; margin: 1.2rem 0; }
+@media (prefers-color-scheme: dark) { .todo { background: #2a2119; color: #e5b378; } }
