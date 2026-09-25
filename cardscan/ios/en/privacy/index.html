@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Privacy Policy — CardScanner for iOS</title>
-<meta name="description" content="How CardScanner for iOS handles your data. Card recognition and your collection stay on your device.">
+<title>Privacy Policy – CardScanner for iOS</title>
+<meta name="description" content="How CardScanner for iOS handles your data. Identifying a card sends the photograph to our server and on to OpenAI; your collection stays on your phone.">
 <link rel="canonical" href="https://alex-odinson12.github.io/legal/cardscan/ios/en/privacy/">
 <link rel="stylesheet" href="../../../../style.css">
 </head>
@@ -13,130 +13,393 @@
 <header>
   <h1>Privacy Policy</h1>
   <p class="meta">
-    CardScanner for iOS · Revision 2026-09-10 · Effective 2026-09-10 ·
-    <a href="../../ru/privacy/">Русский</a>
+    CardScanner for iOS · Revision 2026-09-25 · Effective 2026-09-25 ·
+    <a href="../support/">Support</a>
   </p>
 </header>
 
 <main>
 
-<p class="lede">CardScanner recognises trading cards using your device's camera and keeps
-your collection on your device. In version 1.0 the app makes no network requests of its own,
-and the developer receives no photographs, no collection data and no usage data.</p>
+<h2>In short</h2>
+
+<p class="lede">CardScanner identifies a trading card from a photo. To do that, the app sends the
+photo off your phone: first to our server, then on to OpenAI, whose model reads the text printed on
+the card. The app asks you before it does this for the first time, and you can take the permission
+back.</p>
 
 <div class="box">
-<p><strong>The short version.</strong> Point the camera at a card, the phone works out which card
-it is, and the answer is stored in a database on the phone. Nothing is uploaded. There is no
-account to create and nothing to sign in to. If you delete the app, the collection goes with it.</p>
+<p>Your collection stays on your phone. The photos you take of your own copies are never sent.</p>
+<p>We keep no copy of your photographs. We do keep a record of every recognition request: when it
+happened, which device it came from, and which cards we matched. Right now nothing on our server
+deletes those records after a while. This policy says plainly what that means and what it does
+not.</p>
+<p>There is no account, no name, no e-mail address and no password. There is no advertising, no
+analytics, and no third-party SDK of any kind in the app.</p>
 </div>
 
-<h2>Developer contact information</h2>
+<h2>Who we are, and how to reach us</h2>
 
-<p>This policy is issued by the developer of CardScanner ("we", "the developer").
-Questions about this policy or about data in the app go to
-<a href="mailto:quicklysearch.bot@gmail.com">quicklysearch.bot@gmail.com</a>.</p>
+<p>CardScanner is an independent app. It is not affiliated with, endorsed or sponsored by the
+rights holders of the games it shows.</p>
 
-<h2>Terms of use</h2>
+<p>Write to us at <a href="mailto:quicklysearch.bot@gmail.com"><strong>quicklysearch.bot@gmail.com</strong></a>.
+That mailbox is hosted by Google, so an e-mail you send us is stored on Google's systems along with
+your own address and anything you attach. If you write from inside the app, the message comes with
+the app version and build, your iOS version, your device model and your language – nothing else,
+and you can see and edit all of it before you send.</p>
 
 <p>Use of the app is governed by Apple's Licensed Application End User License Agreement:
 <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">apple.com/legal/internet-services/itunes/dev/stdeula</a>.</p>
 
-<h2>What the app does with data, by version</h2>
+<h2 id="photo">The photograph of a card</h2>
 
-<p>This table describes the versions of the app that have actually been released. It is the part
-of this policy that changes when the app's behaviour changes; the rest stays put.</p>
+<p><strong>Identifying a card sends the photograph off your phone.</strong> The app asks before the
+first time it does this, and it will not send anything if you decline. Declining costs you the
+photo, nothing else: the rest of the app keeps working.</p>
+
+<h3>What is sent</h3>
+
+<ul>
+  <li><strong>The photograph, prepared for sending.</strong> The app draws the picture again from
+      its pixels into a new image, shrinks it so the longer side is at most 1024 pixels, and saves
+      that as a JPEG. Because the file is built from scratch, the location and camera details your
+      phone writes into an original photo are simply not in it. As a second guard the app strips
+      the Exif block, and our server refuses any image that still carries one.</li>
+  <li><strong>Which game you selected</strong>, if you selected one.</li>
+</ul>
+
+<p>When you use the camera, the app sends the part of the frame inside the scanning rectangle. If
+the card cannot be read, the app offers to send the same shot <strong>whole</strong>; if you accept
+that offer, everything the camera saw goes with it. When you pick an existing photo instead, the
+whole picked image is sent.</p>
+
+<h3>What the model gets is a picture, not an extract from it</h3>
+
+<p>We instruct OpenAI's model to read only the visible text of the card. That is an instruction to
+the model, not a filter on the image. Anything else inside the frame – a face, a room, a document
+on the desk, the rest of your photo – is in the image we send. This is the honest reason the app
+draws a scanning rectangle and asks you to fill it with the card.</p>
+
+<p>Live camera video never leaves your phone. Only the still photo you scan does.</p>
+
+<h3>What our server does with the photo</h3>
+
+<p>It holds the image in memory for the few seconds the request takes, passes it to OpenAI, and
+writes it nowhere. There is no image column in our database and no file storage attached to the
+service.</p>
+
+<p>What our server does write down is a <strong>fingerprint</strong> of the photo: a one-way hash
+computed from the image bytes together with the game hint. It cannot be turned back into a picture.
+It does match if the same photo is sent again, which is how a retry gets the previous answer
+instead of being charged twice.</p>
+
+<h3>Retention at OpenAI</h3>
+
+<p>This is the one part of this policy that describes somebody else's system, so we state it as
+that.</p>
+
+<p>Our request is marked so that OpenAI does not store the response for later retrieval. Under
+OpenAI's published terms for its API, data sent through the API is not used to train their models,
+and inputs may be retained for a limited period for abuse monitoring. We have not enabled Zero Data
+Retention. We do not control what OpenAI keeps, and we will not tell you that OpenAI deletes your
+photo, because we cannot verify it.</p>
+
+<h2>What the app keeps on your phone</h2>
 
 <div class="tablewrap">
 <table>
 <thead>
-<tr><th>Feature</th><th>What is processed</th><th>Where it goes</th><th>How long it is kept</th></tr>
+<tr><th>What</th><th>Where</th><th>In device backups?</th></tr>
 </thead>
 <tbody>
 <tr>
-  <td>Card scanning<br><span style="white-space:nowrap">(since 1.0)</span></td>
-  <td>Live frames from the camera, and the printed card number read from them</td>
-  <td>Held in memory on your device and discarded. Not written to your photo library,
-      not sent anywhere</td>
-  <td>Not kept</td>
+  <td>Your collection: card records, notes, condition, purchase price</td>
+  <td>a database inside the app's own storage</td>
+  <td><strong>yes</strong></td>
 </tr>
 <tr>
-  <td>Your collection<br><span style="white-space:nowrap">(since 1.0)</span></td>
-  <td>The card records you choose to save: name, set, number, and what you noted about them</td>
-  <td>A database file inside the app's own storage on your device</td>
-  <td>Until you delete the record, or delete the app</td>
+  <td>Photos of your own copies</td>
+  <td>a folder inside the app's own storage</td>
+  <td><strong>yes</strong></td>
 </tr>
 <tr>
-  <td>Card catalogue<br><span style="white-space:nowrap">(since 1.0)</span></td>
-  <td>Reference data about printed cards, shipped with the app</td>
-  <td>Read from your device. Looking a card up tells us nothing, because no lookup leaves
-      the device</td>
-  <td>Part of the app</td>
+  <td>An unfinished scan, including the photo bytes that were sent</td>
+  <td>a single file in the app's own storage</td>
+  <td>no, excluded</td>
+</tr>
+<tr>
+  <td>A key identifier for this installation of the app</td>
+  <td>the system keychain</td>
+  <td>per your keychain settings</td>
+</tr>
+<tr>
+  <td>Your settings: the consent flag, the chosen game, onboarding state</td>
+  <td>system app preferences</td>
+  <td>yes</td>
 </tr>
 </tbody>
 </table>
 </div>
 
-<h2>The camera</h2>
+<p>Some of this deserves more than a row in a table.</p>
 
-<p>iOS asks for your permission before the app can use the camera, and you can withdraw that
-permission at any time in Settings. The app uses the camera for one thing: working out which card
-is in front of it. Frames are processed as they arrive and are not saved as photographs.</p>
+<p><strong>Your collection is in your backups, and we did that on purpose.</strong> Your cards are
+your own records; they should survive a new phone. The cost of that choice is that deleting a card
+from the app does not reach into backups already made. Those copies remain until the backup itself
+is replaced or deleted, and that is between you and Apple, not something the app can do.</p>
 
-<p>The app does not ask for access to your photo library, and cannot read it.</p>
+<p><strong>Deleting a card deletes its photo from the phone</strong>, once nothing else refers to
+it. But the collection database also keeps a short operations journal: one line for each card added
+and each card deleted, with a time stamp and the record's internal identifier. Deleting a card
+<strong>adds</strong> a line to that journal; it does not remove one. The journal stays on your
+phone and goes into your backups with the rest of the database.</p>
 
-<h2>Your collection and device backups</h2>
+<p><strong>One folder is never cleaned up.</strong> If the collection database is ever lost and has
+to be rebuilt from scratch, the app moves the old photos aside into a folder named
+<code>photos-set-aside-…</code> instead of deleting them, so that a recoverable collection is not
+destroyed by a bad startup. Nothing in the app ever deletes such a folder. If this has happened on
+your phone, those photos remain in the app's storage, and in your backups, until you delete the
+app.</p>
 
-<p>Your collection lives in a database inside the app's storage. We do not exclude that file from
-Apple's system backup, so <strong>if you have iCloud Backup or computer backups switched on, your
-collection is included in those backups</strong> like other app data.</p>
+<p><strong>An unfinished scan leaves the photo on disk.</strong> When a scan is interrupted, the app
+keeps the exact bytes it sent, so that reopening the app can finish the request instead of paying
+for it again. The file is excluded from backups, and it is deleted when the scan finishes, when you
+start a new one, or the next time the app reads it and finds it older than 24 hours. That last case
+matters: the file is removed <strong>on the next read</strong>, not by a timer. If you never open
+the app again, the file stays where it is until you delete the app.</p>
 
-<p>That backup is Apple's mechanism, not ours. It is governed by Apple's own privacy terms and by
-your device settings, and the developer has no access to it. We mention it because "stored only on
-your device" would otherwise be misleading.</p>
+<p><strong>The keychain item survives deleting the app.</strong> It holds the identifier of this
+installation's App Attest key, so that reinstalling does not hand you a fresh daily quota. iOS
+keeps keychain items after an app is removed; it is marked so that it does not travel to another
+device.</p>
 
-<h2>Deleting your data</h2>
+<p>Deleting the app removes the collection, its photos, the catalogue, the unfinished scan and the
+settings. It does not remove the keychain item, anything already in a backup, or anything on our
+server.</p>
+
+<h2>What leaves your phone, and when</h2>
+
+<div class="tablewrap">
+<table>
+<thead>
+<tr><th>When you</th><th>What leaves your phone</th><th>Where it goes</th></tr>
+</thead>
+<tbody>
+<tr><td>Scan a card</td><td>the prepared photo, the game you chose, a request identifier, a device attestation</td><td>our server, then OpenAI</td></tr>
+<tr><td>Search by name or number</td><td>the name or number you typed, a request identifier, a device attestation</td><td>our server</td></tr>
+<tr><td>Look up a reference price</td><td>identifiers of the card printing, from our own catalogue</td><td>our server</td></tr>
+<tr><td>Open a card's details</td><td>identifiers of the card printing</td><td>our server</td></tr>
+<tr><td>View a card's picture</td><td>a request for that image file</td><td>the catalogue source that hosts it (see below)</td></tr>
+<tr><td>Tap "Where to buy"</td><td>the card's name, printed number and set name, inside a search address</td><td>TCGplayer or eBay, in a browser view</td></tr>
+<tr><td>Write to support</td><td>whatever you write, plus app version, iOS version, device model, language</td><td>our mailbox at Google</td></tr>
+<tr><td>Anything at all</td><td>your IP address, as with every internet request</td><td>whoever you are talking to</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>There is no account, no registration, no name and no e-mail address anywhere in this list.</p>
+
+<p><strong>The device attestation</strong> is Apple's App Attest. Your phone asks Apple to vouch
+that the request comes from a genuine, unmodified installation of this app, and sends us the
+result. It exists to stop somebody draining the service with a script; it carries nothing about
+you. If attestation is unavailable, the app still works, on a smaller quota.</p>
+
+<h2 id="retention">What our server keeps, and for how long</h2>
+
+<div class="tablewrap">
+<table>
+<thead>
+<tr><th>What we store</th><th>Why</th><th>How long</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td>A record of each recognition: the device identity, the request identifier, the photo
+      fingerprint, a daily IP key, the time, the outcome, and <strong>the cards we matched</strong>
+      – their names, sets, numbers and picture addresses</td>
+  <td>to answer a retry without charging you twice, to keep quotas honest, and to see what the
+      service costs</td>
+  <td><strong>indefinitely. Nothing deletes these records</strong></td>
+</tr>
+<tr>
+  <td>Token counts for each recognition</td>
+  <td>to see what the service costs</td>
+  <td>with the record above</td>
+</tr>
+<tr>
+  <td>A record of each counted request: device identity, request identifier, which endpoint, a
+      daily IP key, the time, the status, how many results came back</td>
+  <td>quotas and diagnosing failures</td>
+  <td><strong>indefinitely</strong></td>
+</tr>
+<tr>
+  <td>One row per device identity, with first-seen and last-seen times</td>
+  <td>to apply a quota to a device</td>
+  <td><strong>indefinitely</strong></td>
+</tr>
+<tr>
+  <td>The public key and key identifier of your installation's App Attest key, with a use counter</td>
+  <td>to verify that later requests come from the same genuine installation</td>
+  <td><strong>indefinitely</strong></td>
+</tr>
+<tr>
+  <td>A daily counter of requests per IP key</td>
+  <td>rate limiting</td>
+  <td><strong>indefinitely</strong>, though the key itself changes every day</td>
+</tr>
+<tr>
+  <td>A short-lived copy of a search or price answer</td>
+  <td>so that a repeated request returns the same answer instead of hitting the sources again</td>
+  <td>30 minutes, then removed by a sweep that runs on later writes</td>
+</tr>
+<tr>
+  <td>A cached reference price, keyed by our own catalogue identifiers and not by who asked</td>
+  <td>so that repeated lookups do not hit the price source again</td>
+  <td>treated as stale after up to 24 hours; <strong>the stale row itself is not deleted</strong></td>
+</tr>
+<tr>
+  <td>A random challenge issued during attestation</td>
+  <td>to prove the attestation is fresh</td>
+  <td>deleted when used, and in any case after 5 minutes</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="todo">
+<p><strong>We are not going to dress this up.</strong> There is no scheduled clean-up on our server.
+The records of what you scanned, and when, accumulate and stay. We think they should not, and a
+clean-up is something we intend to build; until it exists, this table is what is true. If that
+changes, the date at the top of this page changes with it.</p>
+</div>
+
+<p><strong>We never write down your raw IP address.</strong> Two different one-way values are
+derived from it before anything is stored:</p>
 
 <ul>
-  <li>Delete a single card from the collection screen in the app.</li>
-  <li>Delete the app to remove the collection database along with it.</li>
+  <li>a <strong>daily IP key</strong> – a keyed hash of the current date and your address.
+      Tomorrow's key for the same address is a different value, so rows from different days cannot
+      be tied together by it;</li>
+  <li>an <strong>anonymous identity</strong>, used only when App Attest is unavailable – a keyed
+      hash of your address and your app's user-agent string. This one has <strong>no date in
+      it</strong>. It does not change from day to day, and it sits in our database indefinitely. If
+      you share an address with other people, as happens behind most home and mobile networks, you
+      share this identity with them too.</li>
 </ul>
 
-<p>Copies inside a backup you made earlier are removed according to your backup settings, not by
-deleting the app. There is no server-side copy for us to delete, because there is no server.</p>
+<p><strong>Your device identity is a hash, and we can undo it inside our own database.</strong> When
+App Attest works, your identity in every record above is a hash of your App Attest key identifier.
+We also store that key identifier itself, unhashed, in the table of registered keys – we need it to
+verify your next request. So the hash is not a wall: anyone with access to our database can join
+the two. We tell you this because calling it "anonymised" would be untrue. It is a pseudonym, and
+you keep your rights over data behind a pseudonym.</p>
 
-<h2>What we do not do</h2>
+<p><strong>Two things are not in the tables above, and that is not an omission.</strong> Your
+photographs are not stored. The words you type into the search box are not stored either – they are
+used to run the query and are gone; not even a hash of them is written down.</p>
 
-<ul>
-  <li>No accounts, no sign-in, no email collection.</li>
-  <li>No analytics, no crash-reporting service, no advertising, no tracking across apps or
-      websites, and no third-party software development kits.</li>
-  <li>No selling or sharing of personal data. There is none to sell.</li>
-</ul>
+<h2>Who else receives data</h2>
 
-<p>Independently of this app, Apple may process information about installations and app usage
-under Apple's own terms and your device settings. That is between you and Apple; we do not receive
-those reports unless you have chosen to share them, and they do not identify you to us.</p>
+<p>This list is built from what actually leaves a device or our server, not from the list of
+sources the app credits on its "Sources &amp; trademarks" screen. Crediting a source and sending it
+data are different things, and only the second belongs here.</p>
+
+<div class="tablewrap">
+<table>
+<thead>
+<tr><th>Who</th><th>What they receive</th><th>Why</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>OpenAI</strong></td><td>the photograph you scanned, and our instruction to read the card</td><td>reading the printed text</td></tr>
+<tr><td><strong>Vercel</strong></td><td>all traffic to our server, including your IP address, and the platform's own request logs</td><td>they host our server</td></tr>
+<tr><td><strong>Neon</strong></td><td>everything in the retention table above</td><td>they host our database</td></tr>
+<tr><td><strong>cards.scryfall.io, assets.tcgdex.net, images.ygoprodeck.com, optcgapi.com</strong></td><td>a direct request from your phone for one card picture, including your IP address and which card it is</td><td>your phone loads catalogue pictures from them, not through us</td></tr>
+<tr><td><strong>Apple</strong></td><td>an App Attest request from your phone</td><td>vouching that the app is genuine</td></tr>
+<tr><td><strong>Google</strong></td><td>an e-mail you send to support, with your address and anything you attach</td><td>they host our support mailbox</td></tr>
+<tr><td><strong>TCGplayer, eBay</strong></td><td>a search for a card's name, number and set, when <strong>you</strong> tap "Where to buy"</td><td>showing you listings, in a browser view</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>Two more companies appear in the app and are <strong>not</strong> on this list, deliberately.
+<strong>PriceCharting</strong> supplies the reference prices, but from a snapshot we loaded into our
+own database; looking at a price does not contact them. <strong>api.scryfall.com and
+api.tcgdex.net</strong> are contacted by our server for some price lookups, using identifiers from
+our own catalogue – they learn which card was asked about, and nothing about you or your device.</p>
+
+<p>We do not sell your data. We do not share it for advertising. There is nothing in the app that
+tracks you across other apps or websites, and the app never asks for permission to do so, because
+it has nothing to ask for.</p>
+
+<h2 id="choices">Your choices</h2>
+
+<h3 id="withdraw">Turning the sending of photos off</h3>
+
+<p>Open the app, go to the <strong>Settings</strong> tab, find <strong>Sending photos</strong>, and
+tap <strong>Withdraw</strong>. The app asks you to confirm. From then on no photo is sent, and the
+app asks you again before the next one.</p>
+
+<p>Be clear about what this does and does not do. It stops future photos leaving your phone. It
+does not recall a photo already sent, and it does not delete the records described above. Those
+records stay until we delete them.</p>
+
+<h3>Not using the camera at all</h3>
+
+<p>Refusing camera access leaves the app usable. You can search for cards by name or number, browse
+the catalogue and keep your collection by hand. Nothing in that path sends a photograph.</p>
+
+<h3 id="deletion">Asking us what we hold, and asking us to delete it</h3>
+
+<p>Write to <a href="mailto:quicklysearch.bot@gmail.com?subject=privacy%20request"><strong>quicklysearch.bot@gmail.com</strong></a>
+with "privacy request" in the subject. We answer within 30 days, and we will tell you honestly what
+we found.</p>
+
+<p>Here is the difficulty, stated in advance rather than after you have written. <strong>There is
+no account, so your e-mail address matches nothing in our database.</strong> Our records are keyed
+to an installation of the app, and today the app does not show you that key. We will not claim to
+have found your records on the strength of an e-mail address – that would be a comfortable lie, and
+it would also mean we were willing to hand somebody else's records to whoever asked.</p>
+
+<p>So a deletion request works like this:</p>
+
+<ol>
+  <li><strong>You write to us</strong>, from any address, saying what you want deleted.</li>
+  <li><strong>We ask you to prove the request comes from the installation you mean.</strong> That
+      means doing something from the phone in question at a time we agree, so that we can find the
+      matching record. We will tell you exactly what to do, in that reply.</li>
+  <li><strong>We delete what we can identify</strong>: the recognition records, the request records
+      and the device identity row for that installation, and the registered App Attest key.</li>
+  <li><strong>We tell you what we did not delete, and why.</strong> We cannot reach anything already
+      handed to OpenAI, and we cannot reach our hosting providers' own operational logs or their
+      backups. We cannot touch a backup of your phone; that is yours and Apple's. If a record cannot
+      be tied to your installation, we will say so rather than delete somebody else's.</li>
+</ol>
+
+<p>If you cannot complete step 2 – the phone is gone, the app is uninstalled – say so, and we will
+tell you what that means in your case instead of guessing at it.</p>
 
 <h2>Children</h2>
 
-<p>The app does not collect personal data from anyone, children included, and has no social,
-messaging or user-generated content features.</p>
+<p>CardScanner is not directed to children under 13, and we do not knowingly collect data from
+them. If you believe a child has sent us a photo, write to us and we will delete what we can
+identify.</p>
 
 <h2>This page itself</h2>
 
 <p>This document is hosted on GitHub Pages. Opening it makes an ordinary web request, and the
-hosting provider may record technical details such as your IP address for security purposes,
-under GitHub's terms. That happens because you opened a web page, not because you used the app.</p>
+hosting provider may record technical details such as your IP address for security purposes, under
+GitHub's terms. That happens because you opened a web page, not because you used the app.</p>
 
 <h2>Changes to this policy</h2>
 
-<p>The revision date at the top changes whenever this document changes. If a future version of the
-app processes data differently, this policy is updated before that version is released, and the
-table above records which version the change applies to.</p>
+<p>If we change how the app handles your data, we update the date at the top of this page, and
+where the change matters we say so inside the app. The app records that you gave permission to send
+photos, but it does not record which version of this policy you read at the time – so if a future
+change is significant, we will ask again rather than assume the old permission covers it.</p>
 
 <footer>
-  <p>CardScanner · <a href="mailto:quicklysearch.bot@gmail.com">quicklysearch.bot@gmail.com</a></p>
-  <p>Revision 2026-09-10 · <a href="../../../../">All legal documents</a></p>
+  <p>CardScanner · <a href="mailto:quicklysearch.bot@gmail.com">quicklysearch.bot@gmail.com</a> ·
+     <a href="../support/">Support</a></p>
+  <p>Revision 2026-09-25 · <a href="../../../../">All legal documents</a></p>
 </footer>
 
 </main>
