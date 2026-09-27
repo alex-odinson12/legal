@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy – CardScanner for iOS</title>
-<meta name="description" content="How CardScanner for iOS handles your data. Identifying a card sends the photograph to our server and on to OpenAI; your collection stays on your phone.">
+<meta name="description" content="How CardScanner for iOS handles your data: the card photo sent for recognition, the subscription through Apple and Adapty, and usage analytics in Mixpanel. Your collection stays on your phone.">
 <link rel="canonical" href="https://alex-odinson12.github.io/legal/cardscan/ios/en/privacy/">
 <link rel="stylesheet" href="../../../../style.css">
 </head>
@@ -13,7 +13,7 @@
 <header>
   <h1>Privacy Policy</h1>
   <p class="meta">
-    CardScanner for iOS · Revision 2026-09-25 · Effective 2026-09-25 ·
+    CardScanner for iOS · Revision 2026-09-27 · Effective 2026-09-27 ·
     <a href="../support/">Support</a>
   </p>
 </header>
@@ -22,384 +22,596 @@
 
 <h2>In short</h2>
 
-<p class="lede">CardScanner identifies a trading card from a photo. To do that, the app sends the
-photo off your phone: first to our server, then on to OpenAI, whose model reads the text printed on
-the card. The app asks you before it does this for the first time, and you can take the permission
-back.</p>
+<p class="lede">CardScanner identifies a trading card from a photo. To do that, the app sends the photo off your
+phone: first to our server, then on to OpenAI, whose model reads the text printed on the card. The
+app asks you before it does this for the first time, and you can take the permission back.</p>
 
 <div class="box">
-<p>Your collection stays on your phone. The photos you take of your own copies are never sent.</p>
+<p>Your collection stays on your phone. When you add a card from a scan, the photo kept with it is the
+same photo that was sent to identify the card; nothing in your collection is uploaded from there.</p>
 <p>We keep no copy of your photographs. We do keep a record of every recognition request: when it
 happened, which device it came from, and which cards we matched. Right now nothing on our server
-deletes those records after a while. This policy says plainly what that means and what it does
-not.</p>
-<p>There is no account, no name, no e-mail address and no password. There is no advertising, no
-analytics, and no third-party SDK of any kind in the app.</p>
+deletes those records after a while. This policy says plainly what that means and what it does not.</p>
+<p>Scanning is paid by subscription, after one free scan. The subscription is bought through Apple and
+managed for us by <strong>Adapty</strong>. We also use <strong>Mixpanel</strong> to count how the app is used: which screens
+people reach, whether scans succeed, whether people subscribe. Both services start working when you
+open the app, before you scan anything, and there is no switch in the app that turns them off.
+Neither of them receives your photos, the words you type into search, or your collection.</p>
+<p>There is no account, no name, no e-mail address and no password. There is no advertising in the
+app, nothing that tracks you across other companies' apps and websites, and we do not sell your
+data.</p>
 </div>
 
 <h2>Who we are, and how to reach us</h2>
-
-<p>CardScanner is an independent app. It is not affiliated with, endorsed or sponsored by the
-rights holders of the games it shows.</p>
-
-<p>Write to us at <a href="mailto:quicklysearch.bot@gmail.com"><strong>quicklysearch.bot@gmail.com</strong></a>.
-That mailbox is hosted by Google, so an e-mail you send us is stored on Google's systems along with
-your own address and anything you attach. If you write from inside the app, the message comes with
-the app version and build, your iOS version, your device model and your language – nothing else,
-and you can see and edit all of it before you send.</p>
-
+<p>CardScanner is an independent app. It is not affiliated with, endorsed or sponsored by the rights
+holders of the games it shows.</p>
+<p>Write to us at <a href="mailto:quicklysearch.bot@gmail.com"><strong>quicklysearch.bot@gmail.com</strong></a>. That mailbox is hosted by Google, so an e-mail you
+send us is stored on Google's systems along with your own address and anything you attach. If you
+write from inside the app, the message comes with the app version and build, your iOS version, your
+device model and your language – nothing else, and you can see and edit all of it before you send.</p>
 <p>Use of the app is governed by Apple's Licensed Application End User License Agreement:
-<a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">apple.com/legal/internet-services/itunes/dev/stdeula</a>.</p>
-
+<a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">apple.com/legal/internet-services/itunes/dev/stdeula</a></p>
 <h2 id="photo">The photograph of a card</h2>
-
-<p><strong>Identifying a card sends the photograph off your phone.</strong> The app asks before the
-first time it does this, and it will not send anything if you decline. Declining costs you the
-photo, nothing else: the rest of the app keeps working.</p>
-
+<p><strong>Identifying a card sends the photograph off your phone.</strong> The app asks before the first time it
+does this, and it will not send anything if you decline. Declining costs you the photo, nothing
+else: the rest of the app keeps working.</p>
 <h3>What is sent</h3>
-
 <ul>
-  <li><strong>The photograph, prepared for sending.</strong> The app draws the picture again from
-      its pixels into a new image, shrinks it so the longer side is at most 1024 pixels, and saves
-      that as a JPEG. Because the file is built from scratch, the location and camera details your
-      phone writes into an original photo are simply not in it. As a second guard the app strips
-      the Exif block, and our server refuses any image that still carries one.</li>
-  <li><strong>Which game you selected</strong>, if you selected one.</li>
+<li><strong>The photograph, prepared for sending.</strong> The app draws the picture again from its pixels into a
+  new image, shrinks it so the longer side is at most 1024 pixels, and saves that as a JPEG. Because
+  the file is built from scratch, the location and camera details your phone writes into an original
+  photo are simply not in it. As a second guard the app strips the Exif block, and our server refuses
+  any image that still carries one.</li>
+<li><strong>Which game you selected</strong>, if you selected one.</li>
 </ul>
-
-<p>When you use the camera, the app sends the part of the frame inside the scanning rectangle. If
-the card cannot be read, the app offers to send the same shot <strong>whole</strong>; if you accept
-that offer, everything the camera saw goes with it. When you pick an existing photo instead, the
-whole picked image is sent.</p>
-
+<p>When you use the camera, the app sends the part of the frame inside the scanning rectangle. If the
+card cannot be read, the app offers to send the same shot <strong>whole</strong>; if you accept that offer,
+everything the camera saw goes with it. When you pick an existing photo instead, the whole picked
+image is sent.</p>
 <h3>What the model gets is a picture, not an extract from it</h3>
-
-<p>We instruct OpenAI's model to read only the visible text of the card. That is an instruction to
-the model, not a filter on the image. Anything else inside the frame – a face, a room, a document
-on the desk, the rest of your photo – is in the image we send. This is the honest reason the app
-draws a scanning rectangle and asks you to fill it with the card.</p>
-
+<p>We instruct OpenAI's model to read only the visible text of the card. That is an instruction to the
+model, not a filter on the image. Anything else inside the frame – a face, a room, a document on the
+desk, the rest of your photo – is in the image we send. This is the honest reason the app draws a
+scanning rectangle and asks you to fill it with the card.</p>
 <p>Live camera video never leaves your phone. Only the still photo you scan does.</p>
-
 <h3>What our server does with the photo</h3>
-
-<p>It holds the image in memory for the few seconds the request takes, passes it to OpenAI, and
-writes it nowhere. There is no image column in our database and no file storage attached to the
-service.</p>
-
-<p>What our server does write down is a <strong>fingerprint</strong> of the photo: a one-way hash
-computed from the image bytes together with the game hint. It cannot be turned back into a picture.
-It does match if the same photo is sent again, which is how a retry gets the previous answer
-instead of being charged twice.</p>
-
+<p>It holds the image in memory for the few seconds the request takes, passes it to OpenAI, and writes
+it nowhere. There is no image column in our database, and the only file storage our server uses
+holds card catalogues and price lists, not anything you send.</p>
+<p>What our server does write down is a <strong>fingerprint</strong> of the photo: a one-way hash computed from the
+image bytes together with the game hint. It cannot be turned back into a picture. It does match if
+the same photo is sent again, which is how a retry gets the previous answer instead of being charged
+twice.</p>
 <h3>Retention at OpenAI</h3>
-
-<p>This is the one part of this policy that describes somebody else's system, so we state it as
-that.</p>
-
-<p>Our request is marked so that OpenAI does not store the response for later retrieval. Under
-OpenAI's published terms for its API, data sent through the API is not used to train their models,
-and inputs may be retained for a limited period for abuse monitoring. We have not enabled Zero Data
-Retention. We do not control what OpenAI keeps, and we will not tell you that OpenAI deletes your
-photo, because we cannot verify it.</p>
-
-<h2>What the app keeps on your phone</h2>
-
-<div class="tablewrap">
-<table>
-<thead>
-<tr><th>What</th><th>Where</th><th>In device backups?</th></tr>
-</thead>
-<tbody>
-<tr>
-  <td>Your collection: card records, notes, condition, purchase price</td>
-  <td>a database inside the app's own storage</td>
-  <td><strong>yes</strong></td>
-</tr>
-<tr>
-  <td>Photos of your own copies</td>
-  <td>a folder inside the app's own storage</td>
-  <td><strong>yes</strong></td>
-</tr>
-<tr>
-  <td>An unfinished scan, including the photo bytes that were sent</td>
-  <td>a single file in the app's own storage</td>
-  <td>no, excluded</td>
-</tr>
-<tr>
-  <td>A key identifier for this installation of the app</td>
-  <td>the system keychain</td>
-  <td>per your keychain settings</td>
-</tr>
-<tr>
-  <td>Your settings: the consent flag, the chosen game, onboarding state</td>
-  <td>system app preferences</td>
-  <td>yes</td>
-</tr>
-</tbody>
-</table>
-</div>
-
-<p>Some of this deserves more than a row in a table.</p>
-
-<p><strong>Your collection is in your backups, and we did that on purpose.</strong> Your cards are
-your own records; they should survive a new phone. The cost of that choice is that deleting a card
-from the app does not reach into backups already made. Those copies remain until the backup itself
-is replaced or deleted, and that is between you and Apple, not something the app can do.</p>
-
-<p><strong>Deleting a card deletes its photo from the phone</strong>, once nothing else refers to
-it. But the collection database also keeps a short operations journal: one line for each card added
-and each card deleted, with a time stamp and the record's internal identifier. Deleting a card
-<strong>adds</strong> a line to that journal; it does not remove one. The journal stays on your
-phone and goes into your backups with the rest of the database.</p>
-
-<p><strong>One folder is never cleaned up.</strong> If the collection database is ever lost and has
-to be rebuilt from scratch, the app moves the old photos aside into a folder named
-<code>photos-set-aside-…</code> instead of deleting them, so that a recoverable collection is not
-destroyed by a bad startup. Nothing in the app ever deletes such a folder. If this has happened on
-your phone, those photos remain in the app's storage, and in your backups, until you delete the
-app.</p>
-
-<p><strong>An unfinished scan leaves the photo on disk.</strong> When a scan is interrupted, the app
-keeps the exact bytes it sent, so that reopening the app can finish the request instead of paying
-for it again. The file is excluded from backups, and it is deleted when the scan finishes, when you
-start a new one, or the next time the app reads it and finds it older than 24 hours. That last case
-matters: the file is removed <strong>on the next read</strong>, not by a timer. If you never open
-the app again, the file stays where it is until you delete the app.</p>
-
-<p><strong>The keychain item survives deleting the app.</strong> It holds the identifier of this
-installation's App Attest key, so that reinstalling does not hand you a fresh daily quota. iOS
-keeps keychain items after an app is removed; it is marked so that it does not travel to another
-device.</p>
-
-<p>Deleting the app removes the collection, its photos, the catalogue, the unfinished scan and the
-settings. It does not remove the keychain item, anything already in a backup, or anything on our
-server.</p>
-
-<h2>What leaves your phone, and when</h2>
-
-<div class="tablewrap">
-<table>
-<thead>
-<tr><th>When you</th><th>What leaves your phone</th><th>Where it goes</th></tr>
-</thead>
-<tbody>
-<tr><td>Scan a card</td><td>the prepared photo, the game you chose, a request identifier, a device attestation</td><td>our server, then OpenAI</td></tr>
-<tr><td>Search by name or number</td><td>the name or number you typed, a request identifier, a device attestation</td><td>our server</td></tr>
-<tr><td>Look up a reference price</td><td>identifiers of the card printing, from our own catalogue</td><td>our server</td></tr>
-<tr><td>Open a card's details</td><td>identifiers of the card printing</td><td>our server</td></tr>
-<tr><td>View a card's picture</td><td>a request for that image file</td><td>the catalogue source that hosts it (see below)</td></tr>
-<tr><td>Tap "Where to buy"</td><td>the card's name, printed number and set name, inside a search address</td><td>TCGplayer or eBay, in a browser view</td></tr>
-<tr><td>Write to support</td><td>whatever you write, plus app version, iOS version, device model, language</td><td>our mailbox at Google</td></tr>
-<tr><td>Anything at all</td><td>your IP address, as with every internet request</td><td>whoever you are talking to</td></tr>
-</tbody>
-</table>
-</div>
-
-<p>There is no account, no registration, no name and no e-mail address anywhere in this list.</p>
-
-<p><strong>The device attestation</strong> is Apple's App Attest. Your phone asks Apple to vouch
-that the request comes from a genuine, unmodified installation of this app, and sends us the
-result. It exists to stop somebody draining the service with a script; it carries nothing about
-you. If attestation is unavailable, the app still works, on a smaller quota.</p>
-
-<h2 id="retention">What our server keeps, and for how long</h2>
-
-<div class="tablewrap">
-<table>
-<thead>
-<tr><th>What we store</th><th>Why</th><th>How long</th></tr>
-</thead>
-<tbody>
-<tr>
-  <td>A record of each recognition: the device identity, the request identifier, the photo
-      fingerprint, a daily IP key, the time, the outcome, and <strong>the cards we matched</strong>
-      – their names, sets, numbers and picture addresses</td>
-  <td>to answer a retry without charging you twice, to keep quotas honest, and to see what the
-      service costs</td>
-  <td><strong>indefinitely. Nothing deletes these records</strong></td>
-</tr>
-<tr>
-  <td>Token counts for each recognition</td>
-  <td>to see what the service costs</td>
-  <td>with the record above</td>
-</tr>
-<tr>
-  <td>A record of each counted request: device identity, request identifier, which endpoint, a
-      daily IP key, the time, the status, how many results came back</td>
-  <td>quotas and diagnosing failures</td>
-  <td><strong>indefinitely</strong></td>
-</tr>
-<tr>
-  <td>One row per device identity, with first-seen and last-seen times</td>
-  <td>to apply a quota to a device</td>
-  <td><strong>indefinitely</strong></td>
-</tr>
-<tr>
-  <td>The public key and key identifier of your installation's App Attest key, with a use counter</td>
-  <td>to verify that later requests come from the same genuine installation</td>
-  <td><strong>indefinitely</strong></td>
-</tr>
-<tr>
-  <td>A daily counter of requests per IP key</td>
-  <td>rate limiting</td>
-  <td><strong>indefinitely</strong>, though the key itself changes every day</td>
-</tr>
-<tr>
-  <td>A short-lived copy of a search or price answer</td>
-  <td>so that a repeated request returns the same answer instead of hitting the sources again</td>
-  <td>30 minutes, then removed by a sweep that runs on later writes</td>
-</tr>
-<tr>
-  <td>A cached reference price, keyed by our own catalogue identifiers and not by who asked</td>
-  <td>so that repeated lookups do not hit the price source again</td>
-  <td>treated as stale after up to 24 hours; <strong>the stale row itself is not deleted</strong></td>
-</tr>
-<tr>
-  <td>A random challenge issued during attestation</td>
-  <td>to prove the attestation is fresh</td>
-  <td>deleted when used, and in any case after 5 minutes</td>
-</tr>
-</tbody>
-</table>
-</div>
-
-<div class="todo">
-<p><strong>We are not going to dress this up.</strong> There is no scheduled clean-up on our server.
-The records of what you scanned, and when, accumulate and stay. We think they should not, and a
-clean-up is something we intend to build; until it exists, this table is what is true. If that
-changes, the date at the top of this page changes with it.</p>
-</div>
-
-<p><strong>We never write down your raw IP address.</strong> Two different one-way values are
-derived from it before anything is stored:</p>
-
+<p>This is the one part of this policy that describes somebody else's system in detail, so we state it
+as that.</p>
+<p>Our request is marked so that OpenAI does not store the response for later retrieval. Under OpenAI's
+published terms for its API, data sent through the API is not used to train their models, and inputs
+may be retained for a limited period for abuse monitoring. We have not enabled Zero Data Retention.
+We do not control what OpenAI keeps, and we will not tell you that OpenAI deletes your photo,
+because we cannot verify it.</p>
+<h2>The subscription</h2>
+<h3>What is free and what is paid</h3>
+<p><strong>Scanning is the paid part.</strong> Everything else in the app – searching for a card by name or number,
+browsing the catalogue, looking up reference prices, keeping your collection – stays free with or
+without a subscription.</p>
+<p>You get <strong>one free scan</strong> without subscribing. It is used up by the first scan that actually gets
+you an answer: a list of matching cards, or our reply that the card is not in our catalogue. A scan
+that fails, that you stop, that runs into the daily limit, or where we ask you for another photo does
+not use it up. After that, scanning needs a subscription.</p>
+<p>The app remembers that the free scan is used in the system keychain, so deleting and reinstalling
+the app does not bring it back (see "What the app keeps on your phone").</p>
+<h3>Apple handles the payment</h3>
+<p>You buy the subscription from Apple, in Apple's own purchase sheet. <strong>We never see your card number,
+your billing address or your Apple Account, and the app never asks you for them.</strong> What comes back
+to the app is Apple's confirmation of what was bought, and from then on the subscription's state:
+whether it is active, which plan it is, when it started, and when it renews or ends.</p>
+<p>To <strong>cancel</strong>, use Apple's subscription settings on your iPhone (Settings, then your name, then
+Subscriptions; Apple explains it at <a href="https://support.apple.com/en-us/118428">support.apple.com/en-us/118428</a>). The app has no cancel button of
+its own; deleting the app does not cancel anything. <strong>Refunds</strong> are Apple's to give: ask for one at
+<a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a> (<a href="https://support.apple.com/en-us/118223">support.apple.com/en-us/118223</a>). "Restore purchases" in the
+app's Settings tab, and on the subscription screen, asks the App Store for a subscription already
+bought with your Apple Account.</p>
+<h3>Adapty</h3>
+<p><strong>Adapty</strong> (Adapty Tech Inc.) runs the subscription for us: it shows the app which plans to offer,
+carries out the purchase through Apple, and tells the app whether a subscription is active. The
+Adapty code inside the app starts when you open the app, not when you first see a subscription
+screen. It sends Adapty:</p>
 <ul>
-  <li>a <strong>daily IP key</strong> – a keyed hash of the current date and your address.
-      Tomorrow's key for the same address is a different value, so rows from different days cannot
-      be tied together by it;</li>
-  <li>an <strong>anonymous identity</strong>, used only when App Attest is unavailable – a keyed
-      hash of your address and your app's user-agent string. This one has <strong>no date in
-      it</strong>. It does not change from day to day, and it sits in our database indefinitely. If
-      you share an address with other people, as happens behind most home and mobile networks, you
-      share this identity with them too.</li>
+<li><strong>identifiers for this installation</strong>: a random identifier the Adapty code creates for itself,
+  Adapty's own profile identifier, and Apple's identifier for vendor (IDFV) – an identifier that
+  is the same for all apps from one developer on your phone;</li>
+<li><strong>our pseudonym for your installation</strong>, as your customer ID in Adapty. The app passes it on at
+  the next launch after your phone has registered with Apple's App Attest (see "What leaves your
+  phone"). It is the value our server uses for you at that moment: the text <code>key:</code> followed by a
+  one-way hash of your App Attest key identifier. That deliberately lets a subscription, our server's
+  records and Adapty's profile be joined to one installation. Adapty keeps the first such value it
+  gets: if the app later has to replace its App Attest key, our server's identity for you changes
+  and Adapty's customer ID does not;</li>
+<li><strong>the identifier Mixpanel uses for this installation</strong> (see "Usage analytics"), so that Adapty's
+  records and Mixpanel's can be joined;</li>
+<li><strong>your purchases</strong>: Apple's confirmation of each purchase and restore. If your Apple Account has
+  ever bought CardScanner's subscription, the Adapty code also sends a reference to the latest such
+  purchase when the app starts, so that Adapty can load your purchase history from Apple;</li>
+<li><strong>which subscription screen you were shown</strong>;</li>
+<li><strong>technical details of the phone and the installation</strong>: device model, iOS version, screen size,
+  language and region settings, time zone, the country of the App Store you use, app version and
+  build, when the app was installed, whether tracking permission has been granted (in this app it
+  never is), and a standard web browser identification string;</li>
+<li><strong>Apple's Search Ads attribution token</strong> – see "Advertising and tracking" below;</li>
+<li><strong>technical logs of the Adapty code itself</strong>, such as which requests it made, how long they took
+  and whether they failed;</li>
+<li><strong>your IP address</strong>. Apart from seeing it with every request, the Adapty code looks up your
+  phone's public IP address and writes it into your Adapty profile; we have not switched that off.
+  To look it up, the phone makes a request to <strong>ipify</strong> (api.ipify.org), a public service that
+  replies with the address it sees. From the IP address Adapty works out a country for your profile
+  (it can differ from the country of your App Store).</li>
 </ul>
-
-<p><strong>Your device identity is a hash, and we can undo it inside our own database.</strong> When
-App Attest works, your identity in every record above is a hash of your App Attest key identifier.
-We also store that key identifier itself, unhashed, in the table of registered keys – we need it to
-verify your next request. So the hash is not a wall: anyone with access to our database can join
-the two. We tell you this because calling it "anonymised" would be untrue. It is a pseudonym, and
-you keep your rights over data behind a pseudonym.</p>
-
-<p><strong>Two things are not in the tables above, and that is not an omission.</strong> Your
-photographs are not stored. The words you type into the search box are not stored either – they are
-used to run the query and are gone; not even a hash of them is written down.</p>
-
-<h2>Who else receives data</h2>
-
-<p>This list is built from what actually leaves a device or our server, not from the list of
-sources the app credits on its "Sources &amp; trademarks" screen. Crediting a source and sending it
-data are different things, and only the second belongs here.</p>
-
-<div class="tablewrap">
-<table>
+<h2>Usage analytics</h2>
+<p>We use <strong>Mixpanel</strong> to see how the app is used, so that we can tell where it breaks and whether
+people find it worth paying for. The app sends events to Mixpanel's European endpoint
+(api-eu.mixpanel.com), for a Mixpanel project set up in the EU region.</p>
+<p><strong>What is counted.</strong> One event each time something of these kinds happens, with a few plain details
+attached:</p>
+<ul>
+<li>opening the app, and coming back to it;</li>
+<li>going through the first-run introduction, including the game you pick there;</li>
+<li>subscription screens: being shown one, which plan you tapped, whether a purchase or a restore went
+  through, was cancelled or failed, and closing the screen;</li>
+<li>being sent to the subscription screen when you tap Scan, and using up the free scan;</li>
+<li>scans: that one started, how it ended (cards found, not in the catalogue, another photo needed, or
+  an error), which game mode was on, how long it took, how many candidate cards came back, and what
+  you did next if the scan did not settle it;</li>
+<li>adding a card to your collection: whether it came from a scan or from search, whether it was
+  saved, and which game the card is from;</li>
+<li>searches: whether you typed a name, a number or both, and how many results came back – not what
+  you typed.</li>
+</ul>
+<p>When something fails, the event carries a short technical code for the failure, never the error
+message itself.</p>
+<p><strong>Attached to events</strong>: the app version and build, iOS version, the language and region set on
+your phone, the device model, operating system and screen size, whether the phone is on Wi-Fi, the
+type of mobile network and the mobile carrier's name where iOS still provides it, a random
+identifier for each app session, and – once you have seen it – which version of the introduction's
+subscription screen was shown. Most of these, without the network details, are also kept as a small
+profile for this installation.</p>
+<p><strong>What never goes to Mixpanel from the app:</strong> your photos, the text of what you search for, the
+names, numbers or sets of cards, identifiers of cards, anything in your collection, and our server's
+identity for your installation.</p>
+<p><strong>The identifier.</strong> Mixpanel knows this installation by a random identifier created on your phone
+the first time the app runs. It is not your IDFV and not the advertising identifier. It is kept on
+your phone and changes if you delete and reinstall the app. The app gives this identifier to Adapty
+(see above), which is what lets the two services' records be joined.</p>
+<p><strong>Location.</strong> Mixpanel, like any server, sees your IP address when the app sends it events. We have
+switched off Mixpanel's feature that works out your city and country from that address. The country
+Mixpanel sees from the app comes from your phone's region setting, not from where you are.</p>
+<p><strong>Subscription events from Adapty.</strong> Adapty sends our Mixpanel project its own records of
+subscription events – for example, a free trial starting, turning into a paid subscription,
+renewing or ending – under the same Mixpanel identifier. These records come from Adapty's side, not
+from the app, and they carry what Adapty holds about the subscription and your profile: the product,
+the price and the proceeds, the store transaction IDs, the country of your App Store, your Adapty
+profile ID, and the IP address and country Adapty associates with your profile.</p>
+<h2>Advertising and tracking</h2>
+<ul>
+<li><strong>There are no ads in the app, and no advertising SDK.</strong></li>
+<li><strong>The app never asks for permission to track you.</strong> The Adapty code reads the advertising
+  identifier (IDFA) only when that permission has been granted, so in this app it is not read.</li>
+<li><strong>We do not track you across other companies' apps or websites</strong>, we do not share your data for
+  advertising, and we do not sell it.</li>
+<li><strong>One thing about ads, stated so that it is not hidden.</strong> Once for each Adapty profile, the Adapty
+  code asks iOS for an <strong>Apple Search Ads attribution token</strong> and sends it to Adapty. Apple designed
+  this token to tell an app whether it was installed after someone tapped an ad for it in the App
+  Store's search results. It works without the IDFA and without the tracking permission. It is how we
+  can learn whether our own App Store ads bring people who subscribe.</li>
+</ul>
+<h2>What the app keeps on your phone</h2>
+<div class="tablewrap"><table>
 <thead>
-<tr><th>Who</th><th>What they receive</th><th>Why</th></tr>
+<tr>
+<th>What</th>
+<th>Where</th>
+<th>In device backups?</th>
+</tr>
 </thead>
 <tbody>
-<tr><td><strong>OpenAI</strong></td><td>the photograph you scanned, and our instruction to read the card</td><td>reading the printed text</td></tr>
-<tr><td><strong>Vercel</strong></td><td>all traffic to our server, including your IP address, and the platform's own request logs</td><td>they host our server</td></tr>
-<tr><td><strong>Neon</strong></td><td>everything in the retention table above</td><td>they host our database</td></tr>
-<tr><td><strong>cards.scryfall.io, assets.tcgdex.net, images.ygoprodeck.com, optcgapi.com</strong></td><td>a direct request from your phone for one card picture, including your IP address and which card it is</td><td>your phone loads catalogue pictures from them, not through us</td></tr>
-<tr><td><strong>Apple</strong></td><td>an App Attest request from your phone</td><td>vouching that the app is genuine</td></tr>
-<tr><td><strong>Google</strong></td><td>an e-mail you send to support, with your address and anything you attach</td><td>they host our support mailbox</td></tr>
-<tr><td><strong>TCGplayer, eBay</strong></td><td>a search for a card's name, number and set, when <strong>you</strong> tap "Where to buy"</td><td>showing you listings, in a browser view</td></tr>
+<tr>
+<td>Your collection: card records, notes, condition, purchase price</td>
+<td>a database inside the app's own storage</td>
+<td><strong>yes</strong></td>
+</tr>
+<tr>
+<td>Photos of your own copies</td>
+<td>a folder inside the app's own storage</td>
+<td><strong>yes</strong></td>
+</tr>
+<tr>
+<td>An unfinished scan, including the photo bytes that were sent</td>
+<td>a single file in the app's own storage</td>
+<td>no, excluded</td>
+</tr>
+<tr>
+<td>A key identifier for this installation of the app</td>
+<td>the system keychain</td>
+<td>per your keychain settings</td>
+</tr>
+<tr>
+<td>A mark that your free scan has been used</td>
+<td>the system keychain</td>
+<td>per your keychain settings</td>
+</tr>
+<tr>
+<td>Your settings: the consent flag, the chosen game, onboarding state, whether the subscription screen has been shown</td>
+<td>system app preferences</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Adapty's identifiers for this installation, its copy of your subscription status, and its logs waiting to be sent</td>
+<td>the app's own storage and preferences</td>
+<td>mostly yes</td>
+</tr>
+<tr>
+<td>Mixpanel's identifier for this installation, and events waiting to be sent</td>
+<td>the app's own storage and preferences</td>
+<td>yes</td>
+</tr>
 </tbody>
-</table>
-</div>
-
-<p>Two more companies appear in the app and are <strong>not</strong> on this list, deliberately.
-<strong>PriceCharting</strong> supplies the reference prices, but from a snapshot we loaded into our
-own database; looking at a price does not contact them. <strong>api.scryfall.com and
-api.tcgdex.net</strong> are contacted by our server for some price lookups, using identifiers from
-our own catalogue – they learn which card was asked about, and nothing about you or your device.</p>
-
-<p>We do not sell your data. We do not share it for advertising. There is nothing in the app that
-tracks you across other apps or websites, and the app never asks for permission to do so, because
-it has nothing to ask for.</p>
-
+</table></div>
+<p>Some of this deserves more than a row in a table.</p>
+<p><strong>Your collection is in your backups, and we did that on purpose.</strong> Your cards are your own records;
+they should survive a new phone. The cost of that choice is that deleting a card from the app does
+not reach into backups already made. Those copies remain until the backup itself is replaced or
+deleted, and that is between you and Apple, not something the app can do.</p>
+<p><strong>Deleting a card deletes its photo from the phone</strong>, once nothing else refers to it. But the
+collection database also keeps a short operations journal: one line for each card added and each
+card deleted, with a time stamp and the record's internal identifier. Deleting a card <strong>adds</strong> a
+line to that journal; it does not remove one. The journal stays on your phone and goes into your
+backups with the rest of the database.</p>
+<p><strong>One folder is never cleaned up.</strong> If the collection database is ever lost and has to be rebuilt
+from scratch, the app moves the old photos aside into a folder named <code>photos-set-aside-…</code> instead of
+deleting them, so that a recoverable collection is not destroyed by a bad startup. Nothing in the
+app ever deletes such a folder. If this has happened on your phone, those photos remain in the app's
+storage, and in your backups, until you delete the app.</p>
+<p><strong>An unfinished scan leaves the photo on disk.</strong> When a scan is interrupted, the app keeps the exact
+bytes it sent, so that reopening the app can finish the request instead of paying for it again. The
+file is excluded from backups. Besides the photo, the file
+holds the request identifier, the identity the request was signed with, our server's answer and the
+card you picked. It is deleted when you save the card from that scan, when you start a new scan or
+leave the result, or the next time the app reads it and finds it older than 24 hours. A result you
+look at and neither save nor leave keeps the file until one of those happens. The last case
+matters: the file is removed <strong>on the next read</strong>, not by a timer. If you never open the app again,
+the file stays where it is until you delete the app.</p>
+<p><strong>Both keychain items survive deleting the app.</strong> iOS keeps keychain items after an app is removed.
+The first holds the identifier of this installation's App Attest key, so that reinstalling does not
+hand you a fresh daily quota; it is marked so that it does not travel to another device. Because it
+survives, a reinstalled app on the same phone also gives Adapty the same customer ID as before. The
+second is only a mark that the free scan has been used; it contains nothing about you. It is not
+marked as device-only, so it can move to a new phone with a backup.</p>
+<p>Deleting the app removes the collection, its photos, the catalogue, the unfinished scan, the
+settings, and Adapty's and Mixpanel's identifiers on the phone. It does not remove the two keychain
+items, anything already in a backup, anything on our server, or anything already sent to Adapty or
+Mixpanel.</p>
+<h2>What leaves your phone, and when</h2>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>When you</th>
+<th>What leaves your phone</th>
+<th>Where it goes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Open the app, or come back to it</td>
+<td>the identifiers and technical details described under "Adapty" and "Usage analytics", a reference to your latest CardScanner purchase if there is one, and the events listed there</td>
+<td>Adapty, Mixpanel</td>
+</tr>
+<tr>
+<td></td>
+<td>a request that shows your public IP address</td>
+<td>ipify</td>
+</tr>
+<tr>
+<td>See a subscription screen</td>
+<td>which screen it was</td>
+<td>Adapty, Mixpanel</td>
+</tr>
+<tr>
+<td>Subscribe, or restore a purchase</td>
+<td>the purchase itself goes to Apple; Apple's confirmation and your purchase history go to Adapty; the outcome goes to Mixpanel</td>
+<td>Apple, Adapty, Mixpanel</td>
+</tr>
+<tr>
+<td>Scan a card</td>
+<td>the prepared photo, the game you chose, a request identifier, a device attestation</td>
+<td>our server, then OpenAI</td>
+</tr>
+<tr>
+<td></td>
+<td>that a scan started and how it ended (no photo, no card details)</td>
+<td>Mixpanel</td>
+</tr>
+<tr>
+<td>Search by name or number</td>
+<td>the name or number you typed, a request identifier, a device attestation</td>
+<td>our server</td>
+</tr>
+<tr>
+<td></td>
+<td>whether you typed a name or a number, and how many results came back</td>
+<td>Mixpanel</td>
+</tr>
+<tr>
+<td>Look up a reference price</td>
+<td>identifiers of the card printing, from our own catalogue</td>
+<td>our server</td>
+</tr>
+<tr>
+<td>Open a card's details</td>
+<td>identifiers of the card printing</td>
+<td>our server</td>
+</tr>
+<tr>
+<td>View a card's picture</td>
+<td>a request for that image file</td>
+<td>the catalogue source that hosts it (see below)</td>
+</tr>
+<tr>
+<td>Add a card to your collection</td>
+<td>where it came from and which game it is from – not the card</td>
+<td>Mixpanel</td>
+</tr>
+<tr>
+<td>Tap "Where to buy"</td>
+<td>the card's name, printed number and set name, inside a search address</td>
+<td>TCGplayer or eBay, in a browser view</td>
+</tr>
+<tr>
+<td>Write to support</td>
+<td>whatever you write, plus app version, iOS version, device model, language</td>
+<td>our mailbox at Google</td>
+</tr>
+<tr>
+<td>Anything at all</td>
+<td>your IP address, as with every internet request</td>
+<td>whoever you are talking to</td>
+</tr>
+</tbody>
+</table></div>
+<p>There is no account, no registration, no name and no e-mail address anywhere in this list.</p>
+<p><strong>The device attestation</strong> is Apple's App Attest. Your phone asks Apple to vouch that the request
+comes from a genuine, unmodified installation of this app, and sends us the result. It exists to
+stop somebody draining the service with a script; it carries nothing about you. If attestation is
+unavailable, the app still works, on a smaller quota.</p>
+<h2 id="retention">What our server keeps, and for how long</h2>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>What we store</th>
+<th>Why</th>
+<th>How long</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A record of each recognition: the device identity, the request identifier, the photo fingerprint, a daily IP key, the time, the outcome, and <strong>the cards we matched</strong> – their names, sets, numbers and picture addresses</td>
+<td>to answer a retry without charging you twice, to keep quotas honest, and to see what the service costs</td>
+<td><strong>indefinitely. Nothing deletes these records</strong></td>
+</tr>
+<tr>
+<td>Token counts for each recognition</td>
+<td>to see what the service costs</td>
+<td>with the record above</td>
+</tr>
+<tr>
+<td>A record of each counted request: device identity, request identifier, which endpoint, a daily IP key, the time, the status, how many results came back</td>
+<td>quotas and diagnosing failures</td>
+<td><strong>indefinitely</strong></td>
+</tr>
+<tr>
+<td>One row per device identity, with first-seen and last-seen times</td>
+<td>to apply a quota to a device</td>
+<td><strong>indefinitely</strong></td>
+</tr>
+<tr>
+<td>The public key and key identifier of your installation's App Attest key, with a use counter</td>
+<td>to verify that later requests come from the same genuine installation</td>
+<td><strong>indefinitely</strong></td>
+</tr>
+<tr>
+<td>A daily counter of requests per IP key</td>
+<td>rate limiting</td>
+<td><strong>indefinitely</strong>, though the key itself changes every day</td>
+</tr>
+<tr>
+<td>A short-lived copy of a search or price answer</td>
+<td>so that a repeated request returns the same answer instead of hitting the sources again</td>
+<td>30 minutes, then removed by a sweep that runs on later writes</td>
+</tr>
+<tr>
+<td>A cached reference price, keyed by our own catalogue identifiers and not by who asked</td>
+<td>so that repeated lookups do not hit the price source again</td>
+<td>treated as stale after up to 24 hours; <strong>the stale row itself is not deleted</strong></td>
+</tr>
+<tr>
+<td>A random challenge issued during attestation</td>
+<td>to prove the attestation is fresh</td>
+<td>valid for 5 minutes; deleted when used, and expired ones are deleted the next time a challenge is issued</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>We are not going to dress this up.</strong> There is no scheduled clean-up on our server. The records of
+what you scanned, and when, accumulate and stay. We think they should not, and a clean-up is
+something we intend to build; until it exists, this table is what is true. If that changes, the date
+at the top of this page changes with it.</p>
+<p>Our server does not store anything about your subscription. Whether you subscribe is known to Apple
+and Adapty, not to our database.</p>
+<p><strong>We never write down your raw IP address.</strong> Two different one-way values are derived from it before
+anything is stored:</p>
+<ul>
+<li>a <strong>daily IP key</strong> – a keyed hash of the current date and your address. Tomorrow's key for the same
+  address is a different value, so rows from different days cannot be tied together by it;</li>
+<li>an <strong>anonymous identity</strong>, used only when App Attest is unavailable – a keyed hash of your address
+  and your app's user-agent string. This one has <strong>no date in it</strong>. It does not change from day to
+  day, and it sits in our database indefinitely. If you share an address with other people, as
+  happens behind most home and mobile networks, you share this identity with them too.</li>
+</ul>
+<p><strong>Your device identity is a hash, and we can undo it inside our own database.</strong> When App Attest
+works, your identity in every record above is a hash of your App Attest key identifier. We also
+store that key identifier itself, unhashed, in the table of registered keys – we need it to verify
+your next request. So the hash is not a wall: anyone with access to our database can join the two.
+The same identity, as it was when the app passed it on, is also given to Adapty as your customer
+ID, so Adapty's record of your subscription can be joined to our records too. We tell you this because calling it "anonymised"
+would be untrue. It is a pseudonym, and you keep your rights over data behind a pseudonym.</p>
+<p><strong>Two things are not in the tables above, and that is not an omission.</strong> Your photographs are not
+stored. The words you type into the search box are not stored either – they are used to run the
+query and are gone; not even a hash of them is written down.</p>
+<h2>What Adapty and Mixpanel keep, and for how long</h2>
+<p>What each of them receives is described above. <strong>We do not delete it on a schedule.</strong> We ask for it
+to be deleted when you ask us to (see "Your choices"), and when we close the project. We are not
+going to name a period, because nothing in the app sets one. Adapty's and Mixpanel's own terms may
+limit how long they keep data on their side; we do not restate those terms here, because we have not
+verified them.</p>
+<h2>Who else receives data</h2>
+<p>This list is built from what actually leaves a device or our server, not from the list of sources
+the app credits on its "Sources &amp; trademarks" screen. Crediting a source and sending it data are
+different things, and only the second belongs here.</p>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Who</th>
+<th>What they receive</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>OpenAI</strong></td>
+<td>the photograph you scanned, and our instruction to read the card</td>
+<td>reading the printed text</td>
+</tr>
+<tr>
+<td><strong>Adapty</strong> (Adapty Tech Inc.)</td>
+<td>the identifiers, purchases, technical details, attribution token and IP address listed under "Adapty"</td>
+<td>running the subscription</td>
+</tr>
+<tr>
+<td><strong>ipify</strong> (api.ipify.org)</td>
+<td>a request from your phone, which shows it your IP address</td>
+<td>the Adapty code uses it to learn your public IP address</td>
+</tr>
+<tr>
+<td><strong>Mixpanel</strong></td>
+<td>the events, identifier and technical details listed under "Usage analytics", and Adapty's subscription events</td>
+<td>understanding how the app is used</td>
+</tr>
+<tr>
+<td><strong>Vercel</strong></td>
+<td>all traffic to our server, including your IP address, and the platform's own request logs</td>
+<td>they host our server</td>
+</tr>
+<tr>
+<td><strong>Neon</strong></td>
+<td>everything in the retention table above, and the queries our server runs – including, for a search, the name or number you typed, while that query runs</td>
+<td>they host our database</td>
+</tr>
+<tr>
+<td><strong>cards.scryfall.io, assets.tcgdex.net, images.ygoprodeck.com, optcgapi.com</strong></td>
+<td>a direct request from your phone for one card picture, including your IP address and which card it is</td>
+<td>your phone loads catalogue pictures from them, not through us</td>
+</tr>
+<tr>
+<td><strong>Apple</strong></td>
+<td>an App Attest request from your phone; your purchase, if you subscribe</td>
+<td>vouching that the app is genuine; selling the subscription</td>
+</tr>
+<tr>
+<td><strong>Google</strong></td>
+<td>an e-mail you send to support, with your address and anything you attach</td>
+<td>they host our support mailbox</td>
+</tr>
+<tr>
+<td><strong>TCGplayer, eBay</strong></td>
+<td>a search for a card's name, number and set, when <strong>you</strong> tap "Where to buy"</td>
+<td>showing you listings, in a browser view</td>
+</tr>
+</tbody>
+</table></div>
+<p>Two more companies appear in the app and are <strong>not</strong> on this list, deliberately. <strong>PriceCharting</strong>
+supplies the reference prices, but from a price list that our server downloads from them on its own
+schedule into our database; looking at a price does not contact them, and the download carries
+nothing about you. <strong>api.scryfall.com and api.tcgdex.net</strong> are contacted by our server for some price
+lookups, using identifiers from our own catalogue – they learn which card was asked about, and
+nothing about you or your device.</p>
 <h2 id="choices">Your choices</h2>
-
 <h3 id="withdraw">Turning the sending of photos off</h3>
-
-<p>Open the app, go to the <strong>Settings</strong> tab, find <strong>Sending photos</strong>, and
-tap <strong>Withdraw</strong>. The app asks you to confirm. From then on no photo is sent, and the
-app asks you again before the next one.</p>
-
-<p>Be clear about what this does and does not do. It stops future photos leaving your phone. It
-does not recall a photo already sent, and it does not delete the records described above. Those
-records stay until we delete them.</p>
-
+<p>Open the app, go to the <strong>Settings</strong> tab, find <strong>Sending photos</strong>, and tap <strong>Withdraw</strong>. The app asks
+you to confirm. From then on no photo is sent, and the app asks you again before the next one.</p>
+<p>Be clear about what this does and does not do. It stops future photos leaving your phone. It does
+not recall a photo already sent, and it does not delete the records described above. Those records
+stay until we delete them.</p>
 <h3>Not using the camera at all</h3>
-
-<p>Refusing camera access leaves the app usable. You can search for cards by name or number, browse
-the catalogue and keep your collection by hand. Nothing in that path sends a photograph.</p>
-
+<p>Refusing camera access leaves the app usable. You can search for cards by name or number, browse the
+catalogue and keep your collection by hand. Nothing in that path sends a photograph.</p>
+<h3>Adapty and Mixpanel</h3>
+<p>There is no setting in the app that stops Adapty or Mixpanel, and turning the photo permission off
+does not stop them either. If you do not want this data collected, the honest options today are not
+to use the app, or to ask us to delete what was collected (below). If you keep using the app after
+that, collection starts again from the next launch.</p>
+<h3>Your subscription</h3>
+<p>Cancel it in Apple's subscription settings, and ask Apple for refunds, as described under "The
+subscription". Asking us to delete your data does not cancel a subscription.</p>
 <h3 id="deletion">Asking us what we hold, and asking us to delete it</h3>
-
-<p>Write to <a href="mailto:quicklysearch.bot@gmail.com?subject=privacy%20request"><strong>quicklysearch.bot@gmail.com</strong></a>
-with "privacy request" in the subject. We answer within 30 days, and we will tell you honestly what
-we found.</p>
-
-<p>Here is the difficulty, stated in advance rather than after you have written. <strong>There is
-no account, so your e-mail address matches nothing in our database.</strong> Our records are keyed
-to an installation of the app, and today the app does not show you that key. We will not claim to
-have found your records on the strength of an e-mail address – that would be a comfortable lie, and
-it would also mean we were willing to hand somebody else's records to whoever asked.</p>
-
+<p>Write to <a href="mailto:quicklysearch.bot@gmail.com"><strong>quicklysearch.bot@gmail.com</strong></a> with "privacy request" in the subject. We answer within 30
+days, and we will tell you honestly what we found.</p>
+<p>Here is the difficulty, stated in advance rather than after you have written. <strong>There is no account,
+so your e-mail address matches nothing in our database, nor at Adapty or Mixpanel.</strong> Our records are
+keyed to an installation of the app, and so are theirs, and today the app does not show you any of
+those identifiers. We will not claim to have found your records on the strength of an e-mail address
+– that would be a comfortable lie, and it would also mean we were willing to hand somebody else's
+records to whoever asked.</p>
 <p>So a deletion request works like this:</p>
-
 <ol>
-  <li><strong>You write to us</strong>, from any address, saying what you want deleted.</li>
-  <li><strong>We ask you to prove the request comes from the installation you mean.</strong> That
-      means doing something from the phone in question at a time we agree, so that we can find the
-      matching record. We will tell you exactly what to do, in that reply.</li>
-  <li><strong>We delete what we can identify</strong>: the recognition records, the request records
-      and the device identity row for that installation, and the registered App Attest key.</li>
-  <li><strong>We tell you what we did not delete, and why.</strong> We cannot reach anything already
-      handed to OpenAI, and we cannot reach our hosting providers' own operational logs or their
-      backups. We cannot touch a backup of your phone; that is yours and Apple's. If a record cannot
-      be tied to your installation, we will say so rather than delete somebody else's.</li>
+<li><strong>You write to us</strong>, from any address, saying what you want deleted.</li>
+<li><strong>We ask you to prove the request comes from the installation you mean.</strong> That means doing
+   something from the phone in question at a time we agree, so that we can find the matching record
+   on our server. We will tell you exactly what to do, in that reply.</li>
+<li><strong>We follow that record to Adapty and Mixpanel.</strong> Adapty holds our identity for your installation
+   as your customer ID, and Adapty's profile holds the identifier Mixpanel uses. That link exists
+   only if your phone registered with App Attest, the app passed the identity on at a later launch,
+   and the identity has not changed since then. If not, we will tell you what we could and could not
+   find, instead of guessing.</li>
+<li><strong>We delete what we can identify</strong>: on our server, the recognition records, the request records
+   and the device identity row for that installation, and the registered App Attest key; and we ask
+   Adapty and Mixpanel to delete the profile and events tied to that installation.</li>
+<li><strong>We tell you what we did not delete, and why.</strong> We cannot reach anything already handed to
+   OpenAI, and we cannot reach our hosting providers' own operational logs or their backups. We
+   cannot touch a backup of your phone; that is yours and Apple's. Apple keeps its own record of
+   what you bought from it. If a record cannot be tied to your installation, we will say so rather
+   than delete somebody else's.</li>
 </ol>
-
-<p>If you cannot complete step 2 – the phone is gone, the app is uninstalled – say so, and we will
-tell you what that means in your case instead of guessing at it.</p>
-
+<p>If you cannot complete step 2 – the phone is gone, the app is uninstalled – say so, and we will tell
+you what that means in your case instead of guessing at it.</p>
 <h2>Children</h2>
-
-<p>CardScanner is not directed to children under 13, and we do not knowingly collect data from
-them. If you believe a child has sent us a photo, write to us and we will delete what we can
-identify.</p>
-
-<h2>This page itself</h2>
-
-<p>This document is hosted on GitHub Pages. Opening it makes an ordinary web request, and the
-hosting provider may record technical details such as your IP address for security purposes, under
-GitHub's terms. That happens because you opened a web page, not because you used the app.</p>
-
+<p>CardScanner is not directed to children under 13, and we do not knowingly collect data from them. If
+you believe a child has sent us a photo, write to us and we will delete what we can identify.</p>
 <h2>Changes to this policy</h2>
-
-<p>If we change how the app handles your data, we update the date at the top of this page, and
-where the change matters we say so inside the app. The app records that you gave permission to send
+<p>If we change how the app handles your data, we update the date at the top of this page, and where
+the change matters we say so inside the app. The app records that you gave permission to send
 photos, but it does not record which version of this policy you read at the time – so if a future
 change is significant, we will ask again rather than assume the old permission covers it.</p>
+<p><strong>What changed on 27 September 2026.</strong> The previous version, of 25 September 2026, said that the app
+had no analytics and no third-party code. That stopped being true when we added the subscription.
+This version adds Adapty, Mixpanel and ipify, what they receive and why, the free scan and the
+keychain mark that records it, and how a deletion request now reaches Adapty and Mixpanel. It also
+corrects a few details of the previous version: what the unfinished-scan file holds and when it is
+deleted, that a collection photo is the photo that was scanned, what our server's file storage
+holds, and when expired attestation challenges are deleted. How photos are sent and handled has not
+changed.</p>
 
 <footer>
   <p>CardScanner · <a href="mailto:quicklysearch.bot@gmail.com">quicklysearch.bot@gmail.com</a> ·
      <a href="../support/">Support</a></p>
-  <p>Revision 2026-09-25 · <a href="../../../../">All legal documents</a></p>
+  <p>Revision 2026-09-27 · <a href="../../../../">All legal documents</a></p>
 </footer>
 
 </main>
