@@ -16,3 +16,7 @@
 
 Документы других приложений опубликованы раньше и остаются на своих адресах:
 `peoplefinder-legal-ru`, `legitcheck-legal-ru-android`.
+
+LegitCheck AI для Android: английская политика с 14.10.2026 живёт здесь
+(`legitcheck/android/en/privacy/`, раньше была в Notion), русская остаётся в
+`legitcheck-legal-ru-android`.

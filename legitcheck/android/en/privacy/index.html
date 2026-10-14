@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy – LegitCheck AI for Android</title>
+<meta name="description" content="How LegitCheck AI for Android collects, uses, stores and shares your information.">
+<link rel="canonical" href="https://alex-odinson12.github.io/legal/legitcheck/android/en/privacy/">
+<link rel="stylesheet" href="../../../../style.css">
+</head>
+<body>
+
+<header>
+  <h1>Privacy Policy</h1>
+  <p class="meta">
+    LegitCheck AI for Android · Effective October 14, 2026
+  </p>
+</header>
+
+<main>
+
+<p>This Privacy Policy describes how <strong>LegitCheck AI</strong> (the “App”) collects, uses, stores, and shares your information when you use our <strong>Android application</strong> (published on Google Play under the package name <code>com.legit.check.shoe.authenticator</code>).</p>
+<p>By installing or using the App, you agree to the terms described in this Privacy Policy.</p>
+<p><strong>Developer contact:</strong> <a href="mailto:quicklysearch.bot@gmail.com">quicklysearch.bot@gmail.com</a></p>
+<h2>1. Information We Collect</h2>
+<h3>1.1 User-Submitted Content</h3>
+<p>To generate AI-based authenticity verification results, the App processes the following content that you actively provide:</p>
+<ul>
+  <li>Photos of products, items, and goods uploaded for authenticity verification
+  </li>
+  <li>Photos of labels, tags, logos, serial numbers, sole patterns, packaging, and other product details
+  </li>
+  <li>Information about product category, brand, and model entered by you
+  </li>
+  <li>Optional text notes about the item
+  </li>
+</ul>
+<p>This content is processed solely to generate AI-powered authenticity analysis results. We do <strong>not</strong> use your uploaded photos to train external AI models.</p>
+<h3>1.2 Technical Information</h3>
+<p>We automatically collect:</p>
+<ul>
+  <li>Device model, manufacturer, and Android OS version
+  </li>
+  <li>App version and language settings
+  </li>
+  <li>App usage statistics (screens viewed, buttons tapped, session duration, interaction patterns)
+  </li>
+  <li>Crash logs and performance diagnostics
+  </li>
+  <li>Anonymous installation ID (Firebase Installation ID)
+  </li>
+  <li>Anonymous user ID (Mixpanel <code>distinctId</code>)
+  </li>
+  <li>Advertising ID (Google’s Ad ID, when available)
+  </li>
+</ul>
+<p>This information is used to operate, debug, and improve the App.</p>
+<h3>1.3 Subscription Information</h3>
+<p>We collect subscription and purchase-related data:</p>
+<ul>
+  <li>Active subscription status (active, cancelled, expired)
+  </li>
+  <li>Selected plan (weekly or quarterly)
+  </li>
+  <li>Trial period status
+  </li>
+  <li>Purchase confirmations and transaction identifiers
+  </li>
+  <li>Data required to restore past purchases
+  </li>
+</ul>
+<p>For users in Russia, billing is processed by <strong>CloudPayments</strong> (see §3). For users in other countries, billing is processed by <strong>Google Play Billing</strong> via <strong>Adapty</strong> (see §3).</p>
+<h3>1.4 Region Detection</h3>
+<p>To route you to the correct payment provider, the App reads:</p>
+<ul>
+  <li>Your SIM card country code (<code>simCountryIso</code>)
+  </li>
+  <li>Your mobile network country code (<code>networkCountryIso</code>)
+  </li>
+  <li>Your device locale country (e.g., <code>RU</code>, <code>US</code>, <code>DE</code>)
+  </li>
+</ul>
+<p>These three signals are combined to determine whether you are a user in Russia (which switches the payment flow to CloudPayments) or elsewhere (which uses Adapty / Google Play). Reading these values does <strong>not</strong> require any special permission and is done locally on your device.</p>
+<p>These signals are also reported as anonymous analytics events so we can monitor the routing decision quality across our user base.</p>
+<h3>1.5 Contact Information</h3>
+<p>We collect your <strong>email address</strong> only when you initiate a subscription purchase <strong>through CloudPayments</strong> (Russian users). The email is required by Russian Federal Law No. 54-FZ for fiscal receipts. CloudPayments sends the receipt to the email you provide; we receive notification that the receipt was issued.</p>
+<p>We do <strong>not</strong> collect your name, phone number, physical address, government ID, or any other personally identifying information.</p>
+<h3>1.6 Approximate Location (via IP)</h3>
+<p>The App’s analytics provider (Mixpanel) records your approximate location by inferring it from your IP address at the time of each event. The granularity is country / region / city level — <strong>not GPS</strong>.</p>
+<h3>1.7 Device Identifier for the Free Check</h3>
+<p>To give each device one free authenticity check and to prevent abuse of it, the App reads the Android ID (an identifier Android assigns to the App on your device) and turns it on the device into a one-way SHA-256 hash. Only this hash, together with a random request ID, is sent to our free-check service. The Android ID itself never leaves your device, and the hash is never sent to our analytics providers.</p>
+<p>Our service does not store the hash it receives. It stores a keyed hash of it (HMAC-SHA256 with a secret key), the free-check status (reserved or used), the request ID, and the dates the record was created and last changed. The record is not linked to your email address, name, purchases, or analytics IDs. Records that have not changed for 365 days are deleted automatically.</p>
+<p>The App may contact this service when you open the main screen and when you start or complete a free check, including while the free check is not offered to you. In that case the request is only used to check that the service is reachable and nothing is stored.</p>
+<h2>2. How We Use Your Information</h2>
+<h3>2.1 Primary Purposes</h3>
+<p>Your data is used to:</p>
+<ul>
+  <li>Generate AI-based authenticity verification reports
+  </li>
+  <li>Analyze uploaded photos to detect authenticity markers
+  </li>
+  <li>Process subscription purchases and verify Premium Access
+  </li>
+  <li>Limit the free check to one per device and prevent abuse of it
+  </li>
+  <li>Send you fiscal receipts (RU users, required by 54-FZ)
+  </li>
+  <li>Improve the App’s performance, stability, and user experience
+  </li>
+  <li>Operate and debug the App via aggregated analytics
+  </li>
+</ul>
+<h3>2.2 We DO NOT Use Your Data To:</h3>
+<ul>
+  <li>Sell or transfer personal data to brokers, advertisers, or unrelated third parties
+  </li>
+  <li>Train external AI models on your uploaded photos without your consent
+  </li>
+  <li>Create targeted advertisements outside of the App
+  </li>
+  <li>Profile you for marketing purposes unrelated to App functionality
+  </li>
+  <li>Access your photo library, contacts, messages, or other media beyond what you intentionally upload
+  </li>
+</ul>
+<h2>3. Third-Party Services</h2>
+<p>To deliver the App’s functionality, we share specific data with the following service providers. Each one operates under its own privacy policy.</p>
+<h3>3.1 Payment Processing</h3>
+<ul>
+  <li><strong>CloudPayments</strong> (ООО «КлаудПэйментс») — payment processor for users in Russia. CloudPayments receives your card data, email address, and payment amount. <strong>Card data never touches our servers</strong> — the CloudPayments SDK sends it directly to CloudPayments’ servers. CloudPayments also acts as our online cash register operator for fiscal receipts (54-FZ).<br>
+<a href="https://cloudpayments.ru/">https://cloudpayments.ru/</a>
+  </li>
+  <li><strong>Google Play Billing</strong> (Google LLC) — payment processor for users outside Russia (via Adapty integration). Google handles all card data and billing.<br>
+<a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a>
+  </li>
+</ul>
+<h3>3.2 Subscription Management</h3>
+<ul>
+  <li><strong>Adapty.io</strong> (Adapty Tech, Inc.) — subscription management platform for users outside Russia. Adapty receives an anonymous user ID (linked to Mixpanel’s <code>distinctId</code>), purchase events, and device metadata.<br>
+<a href="https://adapty.io/privacy">https://adapty.io/privacy</a>
+  </li>
+</ul>
+<h3>3.3 Analytics</h3>
+<ul>
+  <li><strong>Mixpanel</strong> (Mixpanel, Inc.) — product analytics. Receives anonymous user ID, app events (screen views, button taps, purchase funnel), device and OS metadata, and <strong>approximate location via IP</strong>. Data is stored on Mixpanel’s EU-region servers.<br>
+<a href="https://mixpanel.com/legal/privacy-policy">https://mixpanel.com/legal/privacy-policy</a>
+  </li>
+  <li><strong>Firebase Analytics</strong> (Google LLC) — additional app event analytics.<br>
+<a href="https://firebase.google.com/support/privacy">https://firebase.google.com/support/privacy</a>
+  </li>
+</ul>
+<h3>3.4 Crash Reporting</h3>
+<ul>
+  <li><strong>Firebase Crashlytics</strong> (Google LLC) — receives crash logs and non-fatal error reports for stability monitoring. Crash logs include device model, OS version, app version, and the stack trace. No user-submitted content is included.<br>
+<a href="https://firebase.google.com/support/privacy">https://firebase.google.com/support/privacy</a>
+  </li>
+</ul>
+<h3>3.5 Remote Configuration</h3>
+<ul>
+  <li><strong>Firebase Remote Config</strong> (Google LLC) — used to control feature rollouts (such as enabling the CloudPayments payment route for new app versions). Firebase Remote Config does not collect user-identifying data.<br>
+<a href="https://firebase.google.com/support/privacy">https://firebase.google.com/support/privacy</a>
+  </li>
+</ul>
+<h3>3.6 Advertising Attribution</h3>
+<ul>
+  <li><strong>Meta (Facebook) SDK</strong> (Meta Platforms, Inc.) — advertising attribution. Receives your Advertising ID and app events (installs, purchases) to attribute installs to advertising campaigns. Used only when the App is installed via a Facebook/Instagram advertising campaign.<br>
+<a href="https://www.facebook.com/about/privacy/">https://www.facebook.com/about/privacy/</a>
+  </li>
+</ul>
+<h3>3.7 AI Photo Authentication</h3>
+<ul>
+  <li><strong>OpenAI</strong> (OpenAI, L.L.C.) — receives the photos you upload and returns the AI authenticity analysis. OpenAI’s API terms do not use API-submitted content to train their models. Photos are not stored long-term on our intermediate server.<br>
+<a href="https://openai.com/privacy/">https://openai.com/privacy/</a>
+  </li>
+</ul>
+<h3>3.8 Free Check Service</h3>
+<ul>
+  <li><strong>Cloudflare</strong> (Cloudflare, Inc.) – hosts our free-check service (see §1.7) and its database. The database is stored in Cloudflare’s EU jurisdiction. Cloudflare processes this data on our behalf and only to run the service. Our service logs record the request type, result, response time, country, and app version – not the device hash or your IP address.<br>
+<a href="https://www.cloudflare.com/privacypolicy/">https://www.cloudflare.com/privacypolicy/</a>
+  </li>
+</ul>
+<h3>3.9 App Integrity Verification</h3>
+<ul>
+  <li><strong>Google Play Integrity API</strong> (Google LLC) – when you send photos for analysis, the App asks Google Play for an integrity token and attaches it to the request. Our server asks Google to decode the token to confirm that the request comes from the genuine App installed from Google Play on a genuine Android device. Google Play processes app and device information to produce this result. We do not store the token or the result.<br>
+<a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a>
+  </li>
+</ul>
+<h3>3.10 What We Do Not Share</h3>
+<p>We do <strong>not</strong> share user data with data brokers, ad networks (beyond Meta SDK as described above), marketing list providers, or any other third party not listed in this section.</p>
+<h2>4. App Permissions</h2>
+<h3>4.1 Camera and Photos</h3>
+<p>The App requests permission to:</p>
+<ul>
+  <li><strong>Access your photos</strong> — only when you tap to upload a picture for authenticity analysis. We do not scan your photo library in the background.
+  </li>
+  <li><strong>Use your camera</strong> — only when you choose to capture a new photo for analysis.
+  </li>
+</ul>
+<p>You may revoke these permissions at any time in Android Settings → Apps → LegitCheck AI → Permissions.</p>
+<h3>4.2 Internet Access</h3>
+<p>Required for AI analysis, subscription management, and analytics.</p>
+<h3>4.3 Notifications</h3>
+<p>The App may request notification permissions to alert you about subscription status changes and app updates. You may disable notifications at any time via Android Settings.</p>
+<h3>4.4 Network State</h3>
+<p>The App reads your network connection state to provide offline feedback if the AI service is unreachable.</p>
+<h3>4.5 Phone State</h3>
+<p>The App does <strong>not</strong> request <code>READ_PHONE_STATE</code>. The SIM and network country codes mentioned in §1.4 are available to the App without that permission on modern Android versions.</p>
+<h2>5. Data Security</h2>
+<h3>5.1 Encryption</h3>
+<ul>
+  <li>All network communication is over <strong>HTTPS</strong>.
+  </li>
+  <li>Cleartext (non-HTTPS) traffic is disabled at the operating system level.
+  </li>
+  <li>The release build is obfuscated using R8.
+  </li>
+  <li>Locally cached sensitive data (subscription state, user ID) is stored in <code>EncryptedSharedPreferences</code> with AES-256.
+  </li>
+</ul>
+<h3>5.2 Backup</h3>
+<p>We disable Android’s automatic cloud backup of the App’s data to prevent accidental disclosure of cached identifiers.</p>
+<h3>5.3 Storage</h3>
+<ul>
+  <li>Photos you upload for analysis are sent to OpenAI for processing. They are not permanently stored on our servers.
+  </li>
+  <li>Subscription state is mirrored locally for offline access; the authoritative source remains our subscription backend (for RU users) or Adapty (for others).
+  </li>
+  <li>Crash reports may be retained by Firebase Crashlytics for up to 90 days.
+  </li>
+  <li>The free-check record (see §1.7) is stored by our free-check service and deleted automatically after 365 days without changes.
+  </li>
+</ul>
+<h2>6. Your Rights</h2>
+<p>You have the right to:</p>
+<ul>
+  <li><strong>Request information</strong> about what personal data we have collected about you.
+  </li>
+  <li><strong>Request deletion</strong> of your data. To request deletion, email us at <a href="mailto:quicklysearch.bot@gmail.com">quicklysearch.bot@gmail.com</a> from the email address you used for purchases. We will delete your record in our subscription backend within 30 days; data residing in third-party services (Mixpanel, Firebase, Adapty, CloudPayments) will be deleted via their respective deletion mechanisms.
+  </li>
+  <li><strong>Revoke permissions</strong> in your Android device Settings at any time.
+  </li>
+  <li><strong>Cancel your subscription</strong>:
+  <ul>
+    <li><strong>Non-Russian users</strong> (Adapty/Google Play): Google Play app → Menu → Subscriptions → LegitCheck AI → Cancel.
+    </li>
+    <li><strong>Russian users</strong> (CloudPayments): visit <a href="https://my.cloudpayments.ru">https://my.cloudpayments.ru</a> and cancel from your subscription list, or contact us at <a href="mailto:quicklysearch.bot@gmail.com">quicklysearch.bot@gmail.com</a>.
+  </li></ul>
+  </li>
+  <li><strong>Uninstall the App</strong> — local cached data is removed automatically.
+  </li>
+  <li><strong>Withdraw consent</strong> to data processing — write to us at <a href="mailto:quicklysearch.bot@gmail.com">quicklysearch.bot@gmail.com</a>; note that withdrawing consent may prevent the App from functioning.
+  </li>
+</ul>
+<h3>6.1 Russian Users (152-FZ “On Personal Data”)</h3>
+<p>If you are a resident of the Russian Federation, your personal data is processed in accordance with Federal Law No. 152-FZ “On Personal Data”. Some of our third-party processors (Mixpanel, Firebase, Adapty, OpenAI, Cloudflare, Google Play) operate servers outside the Russian Federation; by using the App, you consent to the cross-border transfer of your data to these providers solely for the purposes described in this Privacy Policy.</p>
+<h3>6.2 EU/UK Users (GDPR)</h3>
+<p>If you are in the European Union or the United Kingdom, the lawful bases for processing your data are: (a) performance of contract (subscription processing); (b) legitimate interests (App improvement, fraud prevention); (c) consent (analytics, advertising attribution).</p>
+<h2>7. Children and Privacy</h2>
+<p>The App is <strong>not intended for children under 13 years of age</strong>. We do not knowingly collect personal data from children under 13. If we become aware that such data has been collected, we will delete it promptly. If you are a parent or guardian and believe your child has used the App, please contact us.</p>
+<h2>8. Changes to This Policy</h2>
+<p>We may update this Privacy Policy from time to time to reflect changes in our practices or in legal requirements. Updated versions will be published at this URL with a new “Last updated” date. Substantial changes will be communicated through the App. Continued use of the App after an update constitutes acceptance of the revised Privacy Policy.</p>
+<h2>9. Disclaimer of Warranties</h2>
+<p>The App:</p>
+<ul>
+  <li>Is provided for <strong>informational purposes</strong> to help inform your purchasing decisions.
+  </li>
+  <li>Does <strong>not</strong> guarantee 100% accuracy in authenticity verification results.
+  </li>
+  <li>Does <strong>not</strong> provide professional authentication, appraisal, or legal certification services.
+  </li>
+  <li>Offers AI-generated analysis that may not always be accurate or definitive.
+  </li>
+</ul>
+<p>For high-value items, we recommend consulting a professional authenticator in addition to using the App.</p>
+<h2>10. Contact Us</h2>
+<p>If you have any questions about this Privacy Policy or our data practices, please contact us at:</p>
+<p><strong>Email:</strong> <a href="mailto:quicklysearch.bot@gmail.com">quicklysearch.bot@gmail.com</a></p>
+<p><em>This Privacy Policy is effective as of October 14, 2026.</em></p>
+
+<footer>
+  <p>LegitCheck AI · <a href="mailto:quicklysearch.bot@gmail.com">quicklysearch.bot@gmail.com</a></p>
+  <p>Effective October 14, 2026 · <a href="../../../../">All legal documents</a></p>
+</footer>
+
+</main>
+</body>
+</html>
