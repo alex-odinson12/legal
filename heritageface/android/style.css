@@ -1,0 +1,4 @@
+.brand { color: var(--ink-2); font-size: .875rem; margin-bottom: .6rem; }
+main { overflow-wrap: anywhere; }
+footer { margin-left: auto; margin-right: auto; }
+nav a { display: inline-block; padding: .35rem 0; }
