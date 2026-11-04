@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; object-src 'none'; base-uri 'self'">
+<title>Privacy Policy for Restore Old Photos: Colorize (Restina)</title>
+<link rel="canonical" href="https://alex-odinson12.github.io/legal/restina/android/en/privacy/">
+<link rel="alternate" hreflang="ru" href="https://alex-odinson12.github.io/legal/restina/android/ru/privacy/">
+<link rel="stylesheet" href="../../../../style.css">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header><p class="brand">Restore Old Photos: Colorize (Restina) · Android</p><h1>Privacy Policy</h1>
+<p class="meta">Fablewood Studio · <a href="../../ru/privacy/">Русский</a></p></header>
+<main><p>Effective date: 2026-11-04. Android app, package com.restina.app.</p>
+<h2>Who we are</h2>
+<p>Fablewood Studio publishes Restore Old Photos: Colorize (also shown as Restina) on Google Play (the App). For privacy questions or a data request, write to <a href="mailto:quicklysearch.bot@gmail.com">quicklysearch.bot@gmail.com</a>.</p>
+<p>The App restores old photographs: it repairs damage, colourises black-and-white pictures, removes scratches, lightens dark photos and can turn a photo into a short video. This page explains what the App collects, who receives it and how long it is kept. There is no account and no registration.</p>
+<h2>Photos you send</h2>
+<p>Before the first photo leaves your phone, the App asks your permission and names the companies that will receive it. You can withdraw that permission at any time in Menu → Sending photos → Withdraw permission. Nothing new is sent after that until you allow it again. Photos already sent cannot be recalled.</p>
+<p>You choose each photo through Android's photo picker or take it with the App's camera screen. The App does not read your photo library. Before sending, the App prepares a smaller JPEG copy and removes its metadata, including EXIF and GPS location.</p>
+<p>The photo travels over HTTPS to our server (api.restina.org, hosted on Cloudflare). Our server passes it to fal.ai, our processing partner, which sends it to the company running the model:</p>
+<ul>
+<li>Restore, Colourise, Scratches and Lighten send the photo to <strong>OpenAI</strong>, which returns an edited photo.</li>
+<li>Animate sends the photo to <strong>PixVerse</strong>, which returns a short video made from it.</li>
+</ul>
+<p>The finished photo or video is delivered to the App through our own server, after we check that the request belongs to the device that created it. We never give out the provider's own link to your result.</p>
+<p>Colourising means the model chooses colours, including skin, hair and clothing tones, that are plausible for the picture. They are an estimate, not a record of the real colours. We do not identify anyone, do not use photos to recognise or verify a person, and do not create biometric templates or face geometry. A photo can still identify the people in it, and the providers process the faces in it to produce the result you asked for.</p>
+<p>Only send photos you have the right to use, with the permission of the people shown where it is required.</p>
+<h2>How long photos are kept</h2>
+<ul>
+<li><strong>Our server</strong> does not store your photo or the result. For each job it keeps a record without the image (see below), including a SHA-256 fingerprint of the photo sent, which lets us recognise a repeated request.</li>
+<li><strong>fal.ai</strong>: we ask fal.ai not to keep the request in its request history. The finished photo or video is kept in fal.ai storage for 7 days so the App can download it, and is then deleted. That period is a setting we choose.</li>
+<li><strong>OpenAI</strong> states that data sent to its API is kept for up to 30 days in abuse-monitoring logs and is not used to train its models by default.</li>
+<li><strong>PixVerse</strong> (only when you use Animate) does not publish a retention period for material processed this way, and we have not established one. This is the one link where we cannot give you a number.</li>
+<li><strong>On your phone</strong>, a photo waiting to be sent is removed after it is processed, or after 24 hours if it was never sent (at most 7 days). Downloaded results stay in the App's private storage until you delete them or uninstall the App. History keeps up to 50 results; when it is full, the oldest are removed first, starting with ones you already saved to your gallery. Photos you save go to your gallery (Pictures/Restina or Movies/Restina) and stay there under your control. The App's data is excluded from Android backup.</li>
+</ul>
+<h2>Other information</h2>
+<table>
+<thead>
+<tr>
+<th>What</th>
+<th>Why</th>
+<th>How long</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A device identifier calculated by the App from Android's ID for this app (a one-way function: the App sends our server and analytics this identifier, not the Android ID itself; the Adapty SDK does send the Android ID to Adapty, see below). It usually stays the same if you reinstall the App on the same device. It is not the advertising ID.</td>
+<td>to give the free photo once per device, keep your subscription working, enforce usage limits and group analytics events</td>
+<td>the device record and the record that the free photo was used are kept while they are needed to prevent repeated free use; see deletion below</td>
+</tr>
+<tr>
+<td>An installation key: a hash of the same Android ID</td>
+<td>to limit free use and repeated security checks per device</td>
+<td>stored only as a keyed hash in usage records</td>
+</tr>
+<tr>
+<td>Job records: times, operation, status, error code, processing version, fal.ai request id, link to the result in fal.ai storage, consent version, photo fingerprint</td>
+<td>to deliver your result and see when processing breaks</td>
+<td>90 days after the job ends</td>
+</tr>
+<tr>
+<td>Usage counts and daily spending totals</td>
+<td>to enforce daily and weekly limits and keep costs predictable</td>
+<td>paid usage counts 30 days; daily totals 2 days; the record of the free photo – see above</td>
+</tr>
+<tr>
+<td>Subscription records: product, status, expiry, Google Play transaction chain id, linked devices</td>
+<td>to know whether your subscription is active and to stop one subscription being misused on other devices</td>
+<td>not deleted automatically at present; removed on request, except what we must keep (see deletion below)</td>
+</tr>
+<tr>
+<td>Your IP address, as seen by our server</td>
+<td>on our server, only for rate limiting and abuse prevention, not for profiling. Mixpanel and Adapty also receive it, see the next section</td>
+<td>rate-limit counters are removed automatically, usually within hours; Cloudflare's technical request logs for our server, which can include your IP address, are kept for up to 7 days</td>
+</tr>
+<tr>
+<td>Google Play Integrity result</td>
+<td>to check that requests come from a genuine copy of the App from Google Play</td>
+<td>not stored in our database; our own log line has no token or IP address, and it sits in the request logs described above (up to 7 days)</td>
+</tr>
+<tr>
+<td>Product analytics events (screens opened, whether a restoration succeeded, your rating of a result and the reason you pick, your answer on the photo permission, timings, subscription status)</td>
+<td>to find where the App fails people</td>
+<td>under Mixpanel's retention for our project</td>
+</tr>
+<tr>
+<td>Crash reports</td>
+<td>to fix crashes</td>
+<td>under Firebase's retention</td>
+</tr>
+</tbody>
+</table>
+<p>We do not collect your name, email address, phone number, contacts or precise location. If you write to us, we receive whatever your email contains. The App's "Contact support" letter adds error codes, request ids, the App version, your language and your device identifier so we can find the problem; you see the letter before sending it.</p>
+<h2>Services that process data</h2>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>What it receives</th>
+<th>What for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cloudflare (our server hosting)</td>
+<td>requests to our server, including IP address and the device identifier; technical request logs are kept for up to 7 days</td>
+<td>hosting, delivery and protection</td>
+</tr>
+<tr>
+<td>fal.ai (United States)</td>
+<td>your photo and the result</td>
+<td>runs the model request and stores the result for 7 days</td>
+</tr>
+<tr>
+<td>OpenAI, through fal.ai (United States)</td>
+<td>your photo and the edited result</td>
+<td>restore, colourise, scratches, lighten</td>
+</tr>
+<tr>
+<td>PixVerse, through fal.ai</td>
+<td>your photo and the video made from it</td>
+<td>Animate</td>
+</tr>
+<tr>
+<td>Google Play</td>
+<td>purchase and subscription details</td>
+<td>payment; we never see your card</td>
+</tr>
+<tr>
+<td>Adapty</td>
+<td>subscription and purchase events, the device identifier (as the customer id), an analytics identifier, and what its SDK collects itself: IP address, the Android ID, the App Set ID, device model, OS, language, time zone and store country</td>
+<td>subscription management, paywall and checking that a subscription belongs to this device</td>
+</tr>
+<tr>
+<td>Mixpanel (EU data centre)</td>
+<td>analytics events, the device identifier, approximate location derived from IP address, standard device and app properties</td>
+<td>product analytics</td>
+</tr>
+<tr>
+<td>Google Firebase Crashlytics</td>
+<td>crash reports, device and app details, installation id</td>
+<td>stability</td>
+</tr>
+<tr>
+<td>Google Play Integrity</td>
+<td>integrity token from Google Play</td>
+<td>anti-abuse checks</td>
+</tr>
+</tbody>
+</table>
+<p>OpenAI and PixVerse receive your photo through fal.ai, and their own published terms govern what they then do with it. Our settings at fal.ai do not decide how OpenAI or PixVerse treat their copies. This is why our Google Play data safety section lists photos as shared.</p>
+<p>Analytics and crash reporting start when the App opens. The photo permission covers sending photos only; it is not a switch for analytics. The App has no in-app switch to turn analytics off; uninstalling the App stops all collection. Analytics events do not contain your photos.</p>
+<p>The App shows no ads, contains no advertising SDK and does not use the Android advertising ID. We do not sell your data or share it for advertising.</p>
+<h2>Security and transfers</h2>
+<p>All connections from the App to our server and to these services use HTTPS. Results and pending photos are kept in the App's private storage, and identity, consent and pending-send records are excluded from backup. No method is perfectly secure.</p>
+<p>Processing a photo means sending it outside the European Union: fal.ai, OpenAI and PixVerse process it in the United States. Mixpanel stores our analytics in its EU data centre; other services may process data in other countries.</p>
+<h2 id="delete-data">Deleting your data</h2>
+
+<p>This section applies to Restore Old Photos: Colorize (Restina) by Fablewood Studio.</p>
+<p>In the App:</p>
+<ul>
+<li>Delete a result: open it and tap Delete. A copy you saved to your gallery stays.</li>
+<li>Stop sending photos: Menu → Sending photos → Withdraw permission.</li>
+<li>Uninstalling the App removes everything stored on your phone, except photos you saved to the gallery. It does not cancel a subscription: manage it in Google Play.</li>
+</ul>
+<p>To ask us to delete data held on our server and by our services:</p>
+<ol>
+<li>In the App, open Menu and tap the line "Version … · device …" at the bottom. This copies your device identifier.</li>
+<li>Email <a href="mailto:quicklysearch.bot@gmail.com">quicklysearch.bot@gmail.com</a> with the subject "Delete my data" and paste the identifier. Do not send photos, passwords or card details.</li>
+<li>We delete the job records, usage records, device links and subscription links for that identifier, and ask Adapty and Mixpanel to delete their records linked to it. Crash reports in Firebase are not linked to this identifier, so we cannot find them by it; they expire under Firebase's retention. We reply when it is done, within 30 days.</li>
+</ol>
+<p>What we may keep: a record that this device already used its free photo (without it, deletion would give a new free photo, so it is kept to prevent abuse), and purchase records that we or Google Play must keep for accounting, refunds or legal reasons. Results in fal.ai storage expire on their own after 7 days. Data already processed by OpenAI or PixVerse is subject to their own retention described above.</p>
+<h2>Age, rights and changes</h2>
+<p>The App is intended for adults aged 18 and over and is not directed to children. We do not knowingly collect children's data.</p>
+<p>If you are in the European Union or the United Kingdom, we rely on these lawful bases: performance of a contract, to process your photos and provide the subscription you ask for; your consent, for sending photos to the AI providers (you can withdraw it in the App); and our legitimate interests, for analytics, crash reports, fraud prevention and security. Analytics and crash reporting start when the App opens and have no separate consent screen; you can object by writing to us or stop them by uninstalling the App.</p>
+<p>Depending on where you live, you may have the right to access, correct or delete your data, or to object to processing. Write to the address above. Because there is no account, we identify your data by the device identifier. You can also complain to your local data protection authority.</p>
+<p>If this policy changes, we will update the effective date above and, if the change is significant, tell you in the App.</p>
+<h2>Provider information</h2>
+<p><a href="https://developers.openai.com/api/docs/guides/your-data">OpenAI API data controls</a> · <a href="https://fal.ai/legal/privacy-policy">fal.ai privacy</a> · <a href="https://pixverse.ai/en/privacy-policy">PixVerse privacy</a> · <a href="https://mixpanel.com/legal/privacy-policy/">Mixpanel privacy</a> · <a href="https://adapty.io/privacy/">Adapty privacy</a> · <a href="https://firebase.google.com/support/privacy/">Firebase privacy</a> · <a href="https://policies.google.com/privacy">Google privacy</a> · <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare privacy</a></p></main>
+<footer><nav aria-label="Legal documents"><a href="../privacy/">Privacy Policy</a> · <a href="../terms/">Terms of Use</a></nav>
+<p>Fablewood Studio · <a href="mailto:quicklysearch.bot@gmail.com">quicklysearch.bot@gmail.com</a></p></footer>
+</body>
+</html>
