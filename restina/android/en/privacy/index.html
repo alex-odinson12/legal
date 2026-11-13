@@ -13,7 +13,7 @@
 <body>
 <header><p class="brand">Restore Old Photos: Colorize (Restina) · Android</p><h1>Privacy Policy</h1>
 <p class="meta">Fablewood Studio · <a href="../../ru/privacy/">Русский</a></p></header>
-<main><p>Effective date: 2026-11-04. Android app, package com.restina.app.</p>
+<main><p>Effective date: 2026-11-13. Android app, package com.restina.app.</p>
 <h2>Who we are</h2>
 <p>Fablewood Studio publishes Restore Old Photos: Colorize (also shown as Restina) on Google Play (the App). For privacy questions or a data request, write to <a href="mailto:quicklysearch.bot@gmail.com">quicklysearch.bot@gmail.com</a>.</p>
 <p>The App restores old photographs: it repairs damage, colourises black-and-white pictures, removes scratches, lightens dark photos and can turn a photo into a short video. This page explains what the App collects, who receives it and how long it is kept. There is no account and no registration.</p>
@@ -47,7 +47,7 @@
 </thead>
 <tbody>
 <tr>
-<td>A device identifier calculated by the App from Android's ID for this app (a one-way function: the App sends our server and analytics this identifier, not the Android ID itself; the Adapty SDK does send the Android ID to Adapty, see below). It usually stays the same if you reinstall the App on the same device. It is not the advertising ID.</td>
+<td>A device identifier calculated by the App from Android's ID for this app (a one-way function: the App sends this identifier, not the Android ID itself, to our server, Mixpanel and Adapty; the Adapty SDK does send the Android ID to Adapty, see below). It usually stays the same if you reinstall the App on the same device. It is not the advertising ID, and the App does not send it to Google Analytics.</td>
 <td>to give the free photo once per device, keep your subscription working, enforce usage limits and group analytics events</td>
 <td>the device record and the record that the free photo was used are kept while they are needed to prevent repeated free use; see deletion below</td>
 </tr>
@@ -73,7 +73,7 @@
 </tr>
 <tr>
 <td>Your IP address, as seen by our server</td>
-<td>on our server, only for rate limiting and abuse prevention, not for profiling. Mixpanel and Adapty also receive it, see the next section</td>
+<td>on our server, only for rate limiting and abuse prevention, not for profiling. Mixpanel, Adapty and Google Analytics also receive it, see the next section</td>
 <td>rate-limit counters are removed automatically, usually within hours; Cloudflare's technical request logs for our server, which can include your IP address, are kept for up to 7 days</td>
 </tr>
 <tr>
@@ -82,9 +82,14 @@
 <td>not stored in our database; our own log line has no token or IP address, and it sits in the request logs described above (up to 7 days)</td>
 </tr>
 <tr>
-<td>Product analytics events (screens opened, whether a restoration succeeded, your rating of a result and the reason you pick, your answer on the photo permission, timings, subscription status)</td>
+<td>Product analytics events in Mixpanel (screens opened, whether a restoration succeeded, your rating of a result and the reason you pick, your answer on the photo permission, timings, subscription status)</td>
 <td>to find where the App fails people</td>
 <td>under Mixpanel's retention for our project</td>
+</tr>
+<tr>
+<td>Google Analytics data: your Android advertising ID (when available), a Firebase app instance ID for this installation, approximate location derived from your IP address, app and device details, how the App was installed (the install referrer from Google Play), Firebase's automatic events (such as first open, sessions and screen views) and two events of our own: the start of a free trial (with the plan) and a paid subscription purchase (plan, price and currency)</td>
+<td>to see whether our ads in other apps and on websites lead to installs, trials and purchases</td>
+<td>event-level data 2 months; user-level data 14 months from the installation's last activity; aggregated reports are kept longer</td>
 </tr>
 <tr>
 <td>Crash reports</td>
@@ -131,7 +136,7 @@
 </tr>
 <tr>
 <td>Adapty</td>
-<td>subscription and purchase events, the device identifier (as the customer id), an analytics identifier, and what its SDK collects itself: IP address, the Android ID, the App Set ID, device model, OS, language, time zone and store country</td>
+<td>subscription and purchase events, the device identifier (as the customer id), the Mixpanel identifier, and what its SDK collects itself: IP address, the Android ID, the App Set ID, device model, OS, language, time zone and store country. The App switches off Adapty's collection of the advertising ID, so Adapty does not receive it; Adapty does not receive the Firebase app instance ID either</td>
 <td>subscription management, paywall and checking that a subscription belongs to this device</td>
 </tr>
 <tr>
@@ -140,8 +145,13 @@
 <td>product analytics</td>
 </tr>
 <tr>
+<td>Google Analytics for Firebase (Google)</td>
+<td>the Google Analytics data described in the previous section</td>
+<td>measuring our advertising; see below</td>
+</tr>
+<tr>
 <td>Google Firebase Crashlytics</td>
-<td>crash reports, device and app details, installation id</td>
+<td>crash reports, device and app details, installation id; with Google Analytics present, Crashlytics also records a crash event in Analytics and adds the Analytics events just before a crash to the report</td>
 <td>stability</td>
 </tr>
 <tr>
@@ -152,8 +162,13 @@
 </tbody>
 </table>
 <p>OpenAI and PixVerse receive your photo through fal.ai, and their own published terms govern what they then do with it. Our settings at fal.ai do not decide how OpenAI or PixVerse treat their copies. This is why our Google Play data safety section lists photos as shared.</p>
-<p>Analytics and crash reporting start when the App opens. The photo permission covers sending photos only; it is not a switch for analytics. The App has no in-app switch to turn analytics off; uninstalling the App stops all collection. Analytics events do not contain your photos.</p>
-<p>The App shows no ads, contains no advertising SDK and does not use the Android advertising ID. We do not sell your data or share it for advertising.</p>
+<p>Analytics and crash reporting start when the App opens; Google Analytics collects only in the released version of the App, not in development builds. The photo permission covers sending photos only; it is not a switch for analytics. The App has no in-app switch to turn analytics off; uninstalling the App stops all collection. Analytics events do not contain your photos.</p>
+<h2>Advertising measurement</h2>
+<p>The App shows no ads and contains no advertising SDK. We advertise the App elsewhere, for example through Google Ads, and use Google Analytics to see whether that advertising works. From the App, Google Analytics receives Firebase's automatic events (in-app purchase events only if Google Play is linked to Firebase) and only two events of our own, both about subscriptions: the start of a free trial (with the plan) and a paid subscription purchase (plan, price and currency). When a Google Play test account makes a purchase, these two events go under separate test names, and we do not count them as ad results; Firebase's automatic events are not renamed. The App does not send Google Analytics your photos, the device identifier or a user ID, and sets no user properties. Google signals is turned off in our Analytics property.</p>
+<p>We link or may link Google Analytics to Google Ads, so Google can match installs, trials and purchases to our ad campaigns, report the results to us and optimise the campaigns. When this link is active, we share these identifiers, events, purchase information and approximate location with Google for advertising. Google Analytics processes data on our behalf; once data is used in Google Ads, Google also uses it for its own purposes under its terms, for example to improve its advertising systems. We do not sell your data for money. More details: <a href="https://policies.google.com/technologies/partner-sites">how Google uses data from apps that use its services</a>.</p>
+<p>For users in the European Economic Area, the United Kingdom and Switzerland, the App tells Google Analytics by default that consent is not given for sending personal data to Google for advertising (ad_user_data) or for ad personalisation (ad_personalization). Analytics collection continues. The App does not show a consent screen, and analytics storage and ad storage are not switched off for anyone.</p>
+<p>You control the advertising ID yourself: in Android Settings open Security &amp; privacy, then Privacy, then Ads (the exact path depends on your device), where you can reset or delete it. After you delete it, the App and its SDKs receive no advertising ID, and the other data described here is still processed.</p>
+<p>The App's manifest includes permissions that come with Google Analytics for Firebase, including the Google Play advertising ID permission (com.google.android.gms.permission.AD_ID) and the Android Privacy Sandbox attribution permissions (ACCESS_ADSERVICES_ATTRIBUTION and ACCESS_ADSERVICES_AD_ID).</p>
 <h2>Security and transfers</h2>
 <p>All connections from the App to our server and to these services use HTTPS. Results and pending photos are kept in the App's private storage, and identity, consent and pending-send records are excluded from backup. No method is perfectly secure.</p>
 <p>Processing a photo means sending it outside the European Union: fal.ai, OpenAI and PixVerse process it in the United States. Mixpanel stores our analytics in its EU data centre; other services may process data in other countries.</p>
@@ -170,16 +185,16 @@
 <ol>
 <li>In the App, open Menu and tap the line "Version … · device …" at the bottom. This copies your device identifier.</li>
 <li>Email <a href="mailto:quicklysearch.bot@gmail.com">quicklysearch.bot@gmail.com</a> with the subject "Delete my data" and paste the identifier. Do not send photos, passwords or card details.</li>
-<li>We delete the job records, usage records, device links and subscription links for that identifier, and ask Adapty and Mixpanel to delete their records linked to it. Crash reports in Firebase are not linked to this identifier, so we cannot find them by it; they expire under Firebase's retention. We reply when it is done, within 30 days.</li>
+<li>We delete the job records, usage records, device links and subscription links for that identifier, and ask Adapty and Mixpanel to delete their records linked to it. Crash reports in Firebase are not linked to this identifier, so we cannot find them by it; they expire under Firebase's retention. Google Analytics data is not linked to it either, so we cannot find it by it; it expires after the periods given above. Deleting your data does not reset your advertising ID: you do that in Android Settings (see above). We reply when it is done, within 30 days.</li>
 </ol>
 <p>What we may keep: a record that this device already used its free photo (without it, deletion would give a new free photo, so it is kept to prevent abuse), and purchase records that we or Google Play must keep for accounting, refunds or legal reasons. Results in fal.ai storage expire on their own after 7 days. Data already processed by OpenAI or PixVerse is subject to their own retention described above.</p>
 <h2>Age, rights and changes</h2>
 <p>The App is intended for adults aged 18 and over and is not directed to children. We do not knowingly collect children's data.</p>
-<p>If you are in the European Union or the United Kingdom, we rely on these lawful bases: performance of a contract, to process your photos and provide the subscription you ask for; your consent, for sending photos to the AI providers (you can withdraw it in the App); and our legitimate interests, for analytics, crash reports, fraud prevention and security. Analytics and crash reporting start when the App opens and have no separate consent screen; you can object by writing to us or stop them by uninstalling the App.</p>
+<p>If you are in the European Union or the United Kingdom, we rely on these lawful bases: performance of a contract, to process your photos and provide the subscription you ask for; your consent, for sending photos to the AI providers (you can withdraw it in the App); and our legitimate interests, for analytics, measuring our advertising, crash reports, fraud prevention and security. Analytics and crash reporting start when the App opens and have no separate consent screen; you can object by writing to us or stop them by uninstalling the App. In these regions the App tells Google by default that consent for advertising use is not given (see Advertising measurement).</p>
 <p>Depending on where you live, you may have the right to access, correct or delete your data, or to object to processing. Write to the address above. Because there is no account, we identify your data by the device identifier. You can also complain to your local data protection authority.</p>
 <p>If this policy changes, we will update the effective date above and, if the change is significant, tell you in the App.</p>
 <h2>Provider information</h2>
-<p><a href="https://developers.openai.com/api/docs/guides/your-data">OpenAI API data controls</a> · <a href="https://fal.ai/legal/privacy-policy">fal.ai privacy</a> · <a href="https://pixverse.ai/en/privacy-policy">PixVerse privacy</a> · <a href="https://mixpanel.com/legal/privacy-policy/">Mixpanel privacy</a> · <a href="https://adapty.io/privacy/">Adapty privacy</a> · <a href="https://firebase.google.com/support/privacy/">Firebase privacy</a> · <a href="https://policies.google.com/privacy">Google privacy</a> · <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare privacy</a></p></main>
+<p><a href="https://developers.openai.com/api/docs/guides/your-data">OpenAI API data controls</a> · <a href="https://fal.ai/legal/privacy-policy">fal.ai privacy</a> · <a href="https://pixverse.ai/en/privacy-policy">PixVerse privacy</a> · <a href="https://mixpanel.com/legal/privacy-policy/">Mixpanel privacy</a> · <a href="https://adapty.io/privacy/">Adapty privacy</a> · <a href="https://firebase.google.com/support/privacy/">Firebase privacy</a> · <a href="https://support.google.com/analytics/answer/11582702">Google Analytics for Firebase data</a> · <a href="https://policies.google.com/privacy">Google privacy</a> · <a href="https://policies.google.com/technologies/partner-sites">Google partner sites and apps</a> · <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare privacy</a></p></main>
 <footer><nav aria-label="Legal documents"><a href="../privacy/">Privacy Policy</a> · <a href="../terms/">Terms of Use</a></nav>
 <p>Fablewood Studio · <a href="mailto:quicklysearch.bot@gmail.com">quicklysearch.bot@gmail.com</a></p></footer>
 </body>
