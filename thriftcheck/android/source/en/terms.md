@@ -1,10 +1,10 @@
-# Terms of Use for ThriftCheck: Vintage Resale AI
+# Terms of Use for ThriftCheck
 
 Effective date: {{EFFECTIVE_DATE}}. Android app, package com.thriftcheck.scanner.
 
 ## The service
 
-Fablewood Studio provides ThriftCheck: Vintage Resale AI, also shown as ThriftCheck (the App), on Google Play. In these terms "we" and "us" mean the developer of the App. Contact: [quicklysearch.bot@gmail.com](mailto:quicklysearch.bot@gmail.com). These terms apply together with the Google Play terms and any consumer rights that cannot be waived. By using the App you accept these terms; if you do not accept them, do not use the App.
+Fablewood Studio provides ThriftCheck (the App) on Google Play. In these terms "we" and "us" mean the developer of the App. Contact: [quicklysearch.bot@gmail.com](mailto:quicklysearch.bot@gmail.com). These terms apply together with the Google Play terms and any consumer rights that cannot be waived. By using the App you accept these terms; if you do not accept them, do not use the App.
 
 You photograph a second-hand item (clothing, records, collectibles, electronics, toys, coins and jewelry, or something else) and the App gives an AI estimate of what it is, its condition, a resale price range and a BUY / BORDERLINE / SKIP suggestion, and, where available, AI estimates of prices on eBay, Mercari, Poshmark and Etsy. You can keep results in a history on your phone and share them as a PDF. The [Privacy Policy](../privacy/) explains which companies process your photos and for how long.
 

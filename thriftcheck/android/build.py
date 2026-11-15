@@ -34,7 +34,7 @@ for lang in ('en',):
 <link rel="stylesheet" href="../../style.css">
 </head>
 <body>
-<header><p class="brand">ThriftCheck: Vintage Resale AI · Android</p><h1>{html.escape(label[kind])}</h1>
+<header><p class="brand">ThriftCheck · Android</p><h1>{html.escape(label[kind])}</h1>
 <p class="meta">Fablewood Studio</p></header>
 <main>{body}</main>
 <footer><nav aria-label="Legal documents"><a href="../privacy/">{label['privacy']}</a> · <a href="../terms/">{label['terms']}</a></nav>

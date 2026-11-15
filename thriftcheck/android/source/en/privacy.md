@@ -1,10 +1,10 @@
-# Privacy Policy for ThriftCheck: Vintage Resale AI
+# Privacy Policy for ThriftCheck
 
 Effective date: {{EFFECTIVE_DATE}}. Android app, package com.thriftcheck.scanner.
 
 ## Who we are
 
-Fablewood Studio publishes ThriftCheck: Vintage Resale AI (also shown as ThriftCheck) on Google Play (the App). In this policy "we" and "us" mean the developer of the App. For privacy questions or a data request, write to [quicklysearch.bot@gmail.com](mailto:quicklysearch.bot@gmail.com).
+Fablewood Studio publishes ThriftCheck on Google Play (the App). In this policy "we" and "us" mean the developer of the App. For privacy questions or a data request, write to [quicklysearch.bot@gmail.com](mailto:quicklysearch.bot@gmail.com).
 
 The App estimates what a second-hand item is and what it could resell for, from photos you take of it. This page explains what the App collects, who receives it and how long it is kept. It covers the Android app only. There is no account and no registration: we do not ask for your name, email address, phone number or password. The App shows no ads.
 
@@ -40,7 +40,7 @@ These prices are AI estimates found by web search, not data supplied by the mark
 |---|---|---|---|
 | Device identifier | the Android ID that Android gives this app on this device and user; if it is missing or invalid, a random installation ID created by the App | our server. The App does not give it to Mixpanel or Crashlytics. The Adapty library reads the Android ID on its own and sends it to Adapty (see below) | one free check per device, daily limits, fraud prevention |
 | Adapty profile ID | a random ID created by the Adapty library on first start | Adapty and our server | checking whether your subscription is active, and the limit of 3 devices per subscription (see the Terms of Use) |
-| Mixpanel ID | a random ID created by the Mixpanel library | Mixpanel; the App also gives it to Adapty, so subscription events can be matched to analytics | analytics |
+| Mixpanel ID | a random ID created by the Mixpanel library | Mixpanel; the App also gives it to Adapty | analytics |
 | Firebase installation ID | created by Firebase | Google (Firebase Crashlytics) | crash reports |
 | Data the Adapty library collects itself | the Android ID, the App Set ID (an ID shared by apps of one developer on a device), the Google Play install referrer (how the App was installed), its own installation and session IDs, device model and display details, Android version, language, time zone, store country, and its own events about App use (for example when the App is opened) and about the library's work | Adapty | subscriptions, subscription analytics and the library's diagnostics |
 | Data the Firebase libraries collect themselves | session IDs and start times, the Firebase installation ID, App version, Android version, device model and manufacturer | Google (Firebase) | App stability; sent when App sessions start, also when nothing crashes |
@@ -93,7 +93,7 @@ Some events carry more than counts:
 - **a purchase** event carries the product, price and currency;
 - **a report** event carries the reason, the check number shown on the result, the category and the verdicts.
 
-Your Mixpanel profile also records whether you used the free check and how many analyses you ran. The App gives Adapty your Mixpanel ID so that Adapty can send subscription events (such as trial starts, renewals and cancellations, with price) to Mixpanel for the same user.
+Your Mixpanel profile also records whether you used the free check and how many analyses you ran. The App also gives Adapty your Mixpanel ID.
 
 Analytics events do not contain your photos, the AI's explanations, the device identifier, the profile ID or the text you type into the history search (only its length). Analytics start when the App opens. There is no in-app switch to turn them off; uninstalling the App stops collection by the App.
 
@@ -115,7 +115,7 @@ Subscriptions are sold through **Google Play Billing**. Google processes the pay
 | Neon (United States) | everything our server stores (see "What our server keeps") | hosting our database |
 | Google | Play Billing purchases; Play Integrity tokens; crash reports, session data and the Firebase installation ID (Crashlytics); emails you send us (Gmail) | payments, fraud prevention, App stability, support |
 | Adapty | profile ID, subscription status and purchase history, the Mixpanel ID, and what its library collects itself (see "Identifiers") | subscriptions |
-| Mixpanel (EU data centre) | usage events and survey answers (see "Analytics"), and subscription events if Adapty sends them | analytics |
+| Mixpanel (EU data centre) | usage events and survey answers (see "Analytics") | analytics |
 | eBay, Mercari, Poshmark, Etsy | only when you tap a link: "See sold on eBay" opens an eBay search for the item name and brand, and a price source opens the marketplace page in your browser | showing you listings |
 
 Each company keeps what it receives under its own retention rules and our account settings with it. We do not sell your data and do not share it for advertising. The App does not track you across other companies' apps or websites.
@@ -150,7 +150,7 @@ Our server and database run in the United States, and OpenAI and Perplexity proc
 
 <h2 id="delete-data">Your choices and deleting your data</h2>
 
-This section applies to ThriftCheck: Vintage Resale AI by Fablewood Studio.
+This section applies to ThriftCheck by Fablewood Studio.
 
 - **Camera.** You can refuse camera access and use the photo picker instead.
 - **Survey.** Every survey question can be skipped.

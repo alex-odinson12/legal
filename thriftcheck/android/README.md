@@ -1,4 +1,4 @@
-# ThriftCheck: Vintage Resale AI – Android legal pages
+# ThriftCheck – Android legal pages
 
 Package: com.thriftcheck.scanner. Developer name on Google Play: Fablewood Studio.
 
@@ -13,4 +13,4 @@ Do not rename these paths after they are referenced by an app release. No JavaSc
 
 Every factual statement is checked against the client and server code; the claim-by-claim evidence lives in the app repository: com.thriftcheck.scanner/docs/legal/legal_EVIDENCE_FINAL_2026-11-14.md (client ad46b6f, server 45d3f0d).
 
-14.11.2026: first Android edition, prepared and committed locally, not published; publication waits for the app owner's approval. Existing app policies and the root site index are unchanged.
+14.11.2026: first Android edition prepared. 15.11.2026: app name shortened to "ThriftCheck", the conditional Adapty-to-Mixpanel wording removed (that integration is off), published with the owner's approval, effective date 2026-11-15. Existing app policies and the root site index are unchanged.
