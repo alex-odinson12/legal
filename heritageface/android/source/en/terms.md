@@ -32,7 +32,7 @@ History is stored locally and normally keeps up to 20 reports. Save or export an
 
 ## Privacy and support
 
-The Privacy Policy explains photos, prompts, providers, analytics, security identifiers, retention and deletion requests. The AI-photo consent is separate from the terms of store billing and from SDK analytics/diagnostics. To report a problem or request help, contact the email above. The current version does not include an in-app AI-content reporting form.
+The Privacy Policy explains photos, prompts, providers, analytics, security identifiers, retention and deletion requests. The AI-photo consent is separate from the terms of store billing and from SDK analytics/diagnostics. To report a problem or request help, contact the email above. Starting with build 5, you can report AI-generated content inside the App: use the flag on a result screen, the link under the button on the first result, or Settings → Report AI content; in History, open the report first. The email remains for general support.
 
 ## Age, changes and legal rights
 
