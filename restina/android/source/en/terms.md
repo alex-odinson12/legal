@@ -40,7 +40,7 @@ Finished results can be downloaded for 7 days and are then deleted from our prov
 
 ## Problems and complaints
 
-If a result is offensive or harmful, or something does not work, write to the address above and include the identifier from the bottom of the Menu. This version of the App has no in-app form for reporting AI content.
+Starting with version 1.0.5 of the App, you can report AI content without leaving the App: tap the flag on a result, on a result with a preview in History or on the previous AI result while a new one is being made, or open Menu → Report AI content. Choose a reason (and, if two AI results are shown, which one) and tap Send. When the App receives confirmation that your report was received, it shows a report number you can copy. If something does not work, or you use an earlier version, write to the address above and include the identifier from the bottom of the Menu.
 
 ## Age, changes and your rights
 

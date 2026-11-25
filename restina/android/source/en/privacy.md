@@ -45,6 +45,7 @@ Only send photos you have the right to use, with the permission of the people sh
 | Your IP address, as seen by our server | on our server, only for rate limiting and abuse prevention, not for profiling. Mixpanel, Adapty and Google Analytics also receive it, see the next section | rate-limit counters are removed automatically, usually within hours; Cloudflare's technical request logs for our server, which can include your IP address, are kept for up to 7 days |
 | Google Play Integrity result | to check that requests come from a genuine copy of the App from Google Play | not stored in our database; our own log line has no token or IP address, and it sits in the request logs described above (up to 7 days) |
 | Product analytics events in Mixpanel (screens opened, whether a restoration succeeded, your rating of a result and the reason you pick, your answer on the photo permission, timings, subscription status) | to find where the App fails people | under Mixpanel's retention for our project |
+| AI content reports you choose to send: a random report number, the reason you picked, where you opened the report (result, History, processing screen or Menu), whether it was a photo, a video or a general report from the Menu, the operation (such as Restore or Animate) and whether it was the previous result, the App language, platform, version, build number and build type (including whether it is a test build), and the time. A report does not contain your photo, the result, the device identifier or any other identifier of you; the report number is used in its place. | to review reports about harmful or offensive AI results and improve our safeguards (Google Play requires apps with AI-generated content to offer this) | under Mixpanel's retention for our project |
 | Google Analytics data: your Android advertising ID (when available), a Firebase app instance ID for this installation, approximate location derived from your IP address, app and device details, how the App was installed (the install referrer from Google Play), Firebase's automatic events (such as first open, sessions and screen views) and two events of our own: the start of a free trial (with the plan) and a paid subscription purchase (plan, price and currency) | to see whether our ads in other apps and on websites lead to installs, trials and purchases | event-level data 2 months; user-level data 14 months from the installation's last activity; aggregated reports are kept longer |
 | Crash reports | to fix crashes | under Firebase's retention |
 
@@ -61,6 +62,7 @@ We do not collect your name, email address, phone number, contacts or precise lo
 | Google Play | purchase and subscription details | payment; we never see your card |
 | Adapty | subscription and purchase events, the device identifier (as the customer id), the Mixpanel identifier, and what its SDK collects itself: IP address, the Android ID, the App Set ID, device model, OS, language, time zone and store country. The App switches off Adapty's collection of the advertising ID, so Adapty does not receive it; Adapty does not receive the Firebase app instance ID either | subscription management, paywall and checking that a subscription belongs to this device |
 | Mixpanel (EU data centre) | analytics events, the device identifier, approximate location derived from IP address, standard device and app properties | product analytics |
+| Mixpanel (EU data centre), AI content reports | the AI content report described above, sent directly from the App with a random report number and without the device identifier; Mixpanel sees your IP address when receiving it, and the App asks Mixpanel not to use it for location | receiving and reviewing AI content reports |
 | Google Analytics for Firebase (Google) | the Google Analytics data described in the previous section | measuring our advertising; see below |
 | Google Firebase Crashlytics | crash reports, device and app details, installation id; with Google Analytics present, Crashlytics also records a crash event in Analytics and adds the Analytics events just before a crash to the report | stability |
 | Google Play Integrity | integrity token from Google Play | anti-abuse checks |
@@ -97,7 +99,9 @@ In the App:
 - Stop sending photos: Menu → Sending photos → Withdraw permission.
 - Uninstalling the App removes everything stored on your phone, except photos you saved to the gallery. It does not cancel a subscription: manage it in Google Play.
 
-To ask us to delete data held on our server and by our services:
+AI content reports are not linked to the device identifier, so the steps below do not find them. To have a report deleted, email [quicklysearch.bot@gmail.com](mailto:quicklysearch.bot@gmail.com) with the subject "Delete my AI content report" and only the report number shown in the App. You do not need to send the device identifier for this.
+
+To ask us to delete data linked to your device on our server and at our services:
 
 1. In the App, open Menu and tap the line "Version … · device …" at the bottom. This copies your device identifier.
 2. Email [quicklysearch.bot@gmail.com](mailto:quicklysearch.bot@gmail.com) with the subject "Delete my data" and paste the identifier. Do not send photos, passwords or card details.
@@ -111,7 +115,7 @@ The App is intended for adults aged 18 and over and is not directed to children.
 
 If you are in the European Union or the United Kingdom, we rely on these lawful bases: performance of a contract, to process your photos and provide the subscription you ask for; your consent, for sending photos to the AI providers (you can withdraw it in the App); and our legitimate interests, for analytics, measuring our advertising, crash reports, fraud prevention and security. Analytics and crash reporting start when the App opens and have no separate consent screen; you can object by writing to us or stop them by uninstalling the App. In these regions the App tells Google by default that consent for advertising use is not given (see Advertising measurement).
 
-Depending on where you live, you may have the right to access, correct or delete your data, or to object to processing. Write to the address above. Because there is no account, we identify your data by the device identifier. You can also complain to your local data protection authority.
+Depending on where you live, you may have the right to access, correct or delete your data, or to object to processing. Write to the address above. Because there is no account, we identify your data by the device identifier, and an AI content report by its report number. You can also complain to your local data protection authority.
 
 If this policy changes, we will update the effective date above and, if the change is significant, tell you in the App.
 
